@@ -61,6 +61,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .cadre .menuBurgerContainer{
@@ -81,21 +82,18 @@ body{
 .cadre .menuBurgerContainer .ring:nth-child(1),
 .cadre .menuBurgerContainer .ring:nth-child(5),
 .cadre .menuBurgerContainer .ring:nth-child(9) {
-  /* Tes styles ici */
   border: solid 2px var(--third-light-color);
 }
 
 .cadre .menuBurgerContainer .ring:nth-child(2),
 .cadre .menuBurgerContainer .ring:nth-child(6),
 .cadre .menuBurgerContainer .ring:nth-child(7) {
-  /* Tes styles ici */
   border: solid 2px var(--first-light-color);
 }
 
 .cadre .menuBurgerContainer .ring:nth-child(3),
 .cadre .menuBurgerContainer .ring:nth-child(4),
 .cadre .menuBurgerContainer .ring:nth-child(8) {
-  /* Tes styles ici */
   border: solid 2px var(--second-light-color);
 }
 
@@ -103,7 +101,69 @@ body{
     border-width: 5px;
 }
 
-.cadre .
+.cadre .mainContent{
+    position: relative;
+    flex: 1;
+}
+
+.cadre .mainContent .menuLinks{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 75px;
+    gap: 20px;
+    right: calc(100% + 22px);
+    transition: right .4s ease-in-out;
+}
+
+.cadre .mainContent .menuLinks.actived{
+    right:0;
+}
+
+.cadre .mainContent .menuLinks .link{
+    font-size: 35px;
+    position: relative;
+    z-index: 0;
+    transition: color .4s ease-in-out;
+}
+
+.cadre .mainContent .menuLinks .link::before{
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: 0;
+    width: 46px;
+    height: 46px;
+    background-color: black;
+    border-radius: 50px;
+    z-index: -1;
+    transition: width .4s ease-in-out;
+}
+
+.cadre .mainContent .menuLinks .link:hover{
+    color: var(--main-color);
+}
+
+.cadre .mainContent .menuLinks .link:hover::before{
+    width: calc(100% + 80px);
+}
+
+.cadre .mainContent .menuLinks .link.red:hover::before{
+    background-color: var(--third-light-color);
+}
+
+.cadre .mainContent .menuLinks .link.blue:hover::before{
+    background-color: var(--first-light-color);
+}
+
+.cadre .mainContent .menuLinks .link.green:hover::before{
+    background-color: var(--second-light-color);
+}
+
 
 /* Links */
 

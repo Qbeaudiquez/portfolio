@@ -1,0 +1,50 @@
+/* Variable */
+
+:root {
+    /*Colors*/
+
+        /*Main colors*/
+
+        --main-color:#FFF9F1;
+        --second-color:#343434;
+
+        /*Light mode*/
+
+        --first-light-color:#406777;
+        --second-light-color:#696416;
+        --third-light-color:#784135;
+
+        /*Dark mode*/
+
+        --first-dark-color:#8DD5F2;
+        --second-dark-color:#BFB52C;
+        --third-dark-color:#F28972;
+
+    /*Fonts*/
+
+    --title-font: "Mochiy Pop One", sans-serif;
+    --content-font: "Miriam Libre", sans-serif;
+}
+
+/* Reset CSS*/
+
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--second-color);
+    box-sizing: border-box;
+    font-family: var(--content-font);
+    transition:
+        color .2s ease-in-out,
+        background-color .2s ease-in-out,
+        transform .2s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--title-font);
+}
+
+button, a{
+    all: unset;
+    cursor: pointer;
+}

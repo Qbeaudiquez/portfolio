@@ -1,0 +1,66 @@
+body.darkmodeActived{
+    background-color: var(--second-color);
+}
+
+/* Main */
+
+body.darkmodeActived .switchContainer .langue{
+    color: var(--main-color);
+}
+
+body.darkmodeActived .switchContainer .iconContainer{
+    transform: translateX(calc(var(--toggle-height) * 1.5));
+    background-color: var(--second-color);
+}
+
+body.darkmodeActived .cadre{
+    border: 2px var(--main-color) solid;
+}
+
+body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(1),
+body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(5),
+body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(9) {
+  border: solid 2px var(--third-dark-color);
+}
+
+body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(2),
+body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(6),
+body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(7) {
+  border: solid 2px var(--first-dark-color);
+}
+
+body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(3),
+body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(4),
+body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(8) {
+  border: solid 2px var(--second-dark-color);
+}
+
+body.darkmodeActived .cadre .menuBurgerContainer:hover .ring{
+    border-width: 5px;
+}
+
+body.darkmodeActived .cadre .linksContainer .link{
+    color: var(--main-color);
+}
+
+body.darkmodeActived .cadre .linksContainer .link:hover{
+    color: var(--second-color);
+}
+
+body.darkmodeActived .cadre .linksContainer .projetLink:hover{
+    background-color: var(--first-dark-color);
+}
+
+body.darkmodeActived .cadre .linksContainer .aboutLink:hover{
+    background-color: var(--second-dark-color);
+}
+
+body.darkmodeActived .cadre .linksContainer .socialLinksContainer .socialLink{
+    fill: var(--main-color);
+}
+
+body.darkmodeActived .cadre .linksContainer .socialLinksContainer .socialLink:hover{
+    fill: var(--third-dark-color);
+}
+
+/* Home */

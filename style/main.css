@@ -1,0 +1,143 @@
+body{
+    background-color: var(--main-color);
+    padding: 10px 45px 45px 45px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Switch buttons */
+
+.switchContainer{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.switchContainer .langue{
+    font-family: var(--title-font);
+    font-size: 14px;
+    transition: transform .2s ease-in-out;
+}
+
+.switchContainer .langue:hover{
+    transform: scale(1.1);
+}
+
+:root {
+    --toggle-height:19px;
+}
+
+.switchContainer .toggleContainer{
+    background-color: var(--main-color);
+    box-shadow:  0px 0px 4px 2px #00000048 inset,  0px 0px 100px 11px #0000004b inset;
+    aspect-ratio: 2.5/1;
+    height: var(--toggle-height);
+    border-radius: 50px;
+    padding: 3px;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+.switchContainer .iconContainer{
+    background-color: var(--main-color);
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50px;
+    position: relative;
+    
+}
+
+/* Page */
+
+.cadre{
+    border: 2px var(--second-color) solid;
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cadre .menuBurgerContainer{
+    width: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-self: end;
+}
+
+.cadre .menuBurgerContainer .ring{
+    width: 10px;
+    aspect-ratio: 1/1;
+    border-radius: 50px;
+    transition: border-width .1s ease;
+}
+
+.cadre .menuBurgerContainer .ring:nth-child(1),
+.cadre .menuBurgerContainer .ring:nth-child(5),
+.cadre .menuBurgerContainer .ring:nth-child(9) {
+  /* Tes styles ici */
+  border: solid 2px var(--third-light-color);
+}
+
+.cadre .menuBurgerContainer .ring:nth-child(2),
+.cadre .menuBurgerContainer .ring:nth-child(6),
+.cadre .menuBurgerContainer .ring:nth-child(7) {
+  /* Tes styles ici */
+  border: solid 2px var(--first-light-color);
+}
+
+.cadre .menuBurgerContainer .ring:nth-child(3),
+.cadre .menuBurgerContainer .ring:nth-child(4),
+.cadre .menuBurgerContainer .ring:nth-child(8) {
+  /* Tes styles ici */
+  border: solid 2px var(--second-light-color);
+}
+
+.cadre .menuBurgerContainer:hover .ring{
+    border-width: 5px;
+}
+
+/* Links */
+
+.cadre .linksContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cadre .linksContainer .link:hover{
+    color: var(--main-color);
+    transition: all .2s ease-in-out;
+}
+
+.cadre .linksContainer .projetLink:hover{
+    background-color: var(--first-light-color);
+}
+
+.cadre .linksContainer .aboutLink:hover{
+    background-color: var(--second-light-color);
+}
+
+.cadre .linksContainer .socialLinksContainer{
+    display: flex;
+    gap: 20px;
+}
+
+.cadre .linksContainer .socialLinksContainer .socialLink{
+    width: 24px;
+    fill: var(--second-color);
+    transition: 
+        fill .2s ease-in-out,
+        transform .2s ease-in-out;
+}
+
+.cadre .linksContainer .socialLinksContainer .socialLink:hover{
+    fill: var(--third-light-color);
+    transform: scale(1.1);
+}

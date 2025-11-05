@@ -64,3 +64,20 @@ body.darkmodeActived .cadre .linksContainer .socialLinksContainer .socialLink:ho
 }
 
 /* Home */
+
+body.darkmodeActived .cadre .mainContent .title,
+body.darkmodeActived .cadre .mainContent .desc{
+    color: var(--main-color);
+}
+
+body.darkmodeActived .cadre .mainContent .desc span.red{
+    color: var(--third-dark-color);
+}
+
+body.darkmodeActived .cadre .mainContent .desc span.blue{
+    color: var(--first-dark-color);
+}
+
+body.darkmodeActived .cadre .mainContent .desc span.green{
+    color: var(--second-dark-color);
+}

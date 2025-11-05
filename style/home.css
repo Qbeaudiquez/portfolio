@@ -1,0 +1,29 @@
+.cadre .mainContent{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cadre .mainContent .title{
+    font-size: 24px ;
+}
+
+.cadre .mainContent .desc{
+    font-size: 14px;
+}
+
+.cadre .mainContent .desc span{
+    font-weight: 700;
+}
+
+.cadre .mainContent .desc span.red{
+    color: var(--third-light-color);
+}
+
+.cadre .mainContent .desc span.blue{
+    color: var(--first-light-color);
+}
+
+.cadre .mainContent .desc span.green{
+    color: var(--second-light-color);
+}

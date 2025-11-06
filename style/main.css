@@ -105,8 +105,10 @@ body{
     position: relative;
     flex: 1;
     align-self: center;
+    justify-content: center;
     display: flex;
     padding: 20px 0px;
+    min-width: 245px;
 }
 
 .cadre .mainContent .menuLinks{
@@ -118,8 +120,8 @@ body{
     flex-direction: column;
     justify-content: center;
     gap: 40px;
-    right: 200%;
-    transition: right .6s ease-in-out;
+    right: 100vw;
+    transition: right .5s ease-in-out;
 }
 
 @media (max-width: 800px){
@@ -135,6 +137,10 @@ body{
 .menuBurgerContainer .ring.actived:not(:nth-child(4)){
     opacity: 0;
 
+}
+
+.cadre .mainContent .pageContent{
+    
 }
 
 .menuBurgerContainer .ring.actived:nth-child(8),

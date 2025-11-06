@@ -105,6 +105,8 @@ body{
     position: relative;
     flex: 1;
     align-self: center;
+    display: flex;
+    padding: 20px 0px;
 }
 
 .cadre .mainContent .menuLinks{

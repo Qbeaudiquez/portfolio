@@ -39,6 +39,34 @@ body.darkmodeActived .cadre .menuBurgerContainer:hover .ring{
     border-width: 5px;
 }
 
+body.darkmodeActived .cadre .mainContent .menuLinks{
+    background-color: var(--second-color);
+}
+
+body.darkmodeActived .cadre .mainContent .menuLinks .link{
+    color: var(--main-color);
+}
+
+body.darkmodeActived .cadre .mainContent .menuLinks .link::before{
+    background-color: var(--main-color);
+}
+
+body.darkmodeActived .cadre .mainContent .menuLinks .link:hover{
+    color: var(--second-color);
+}
+
+body.darkmodeActived .cadre .mainContent .menuLinks .link.red:hover::before{
+    background-color: var(--third-dark-color);
+}
+
+body.darkmodeActived .cadre .mainContent .menuLinks .link.blue:hover::before{
+    background-color: var(--first-dark-color);
+}
+
+body.darkmodeActived .cadre .mainContent .menuLinks .link.green:hover::before{
+    background-color: var(--second-dark-color);
+}
+
 body.darkmodeActived .cadre .linksContainer .link{
     color: var(--main-color);
 }

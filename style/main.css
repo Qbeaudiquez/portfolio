@@ -139,10 +139,6 @@ body{
 
 }
 
-.cadre .mainContent .pageContent{
-    
-}
-
 .menuBurgerContainer .ring.actived:nth-child(8),
 .menuBurgerContainer .ring.actived:nth-child(9) {
     display: none;

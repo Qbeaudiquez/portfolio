@@ -39,6 +39,10 @@ body.darkmodeActived .cadre .menuBurgerContainer:hover .ring{
     border-width: 5px;
 }
 
+body.darkmodeActived .menuBurgerContainer .ring.actived:nth-child(4){
+    border-color: var(--third-dark-color);
+}
+
 body.darkmodeActived .cadre .mainContent .menuLinks{
     background-color: var(--second-color);
 }

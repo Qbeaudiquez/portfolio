@@ -104,6 +104,7 @@ body{
 .cadre .mainContent{
     position: relative;
     flex: 1;
+    align-self: center;
 }
 
 .cadre .mainContent .menuLinks{
@@ -114,10 +115,15 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 75px;
-    gap: 20px;
-    right: calc(100% + 22px);
-    transition: right .4s ease-in-out;
+    gap: 40px;
+    right: 200%;
+    transition: right .6s ease-in-out;
+}
+
+@media (max-width: 800px){
+    .cadre .mainContent .menuLinks{
+        padding-left: 70px;
+    }
 }
 
 .cadre .mainContent .menuLinks.actived{
@@ -151,10 +157,10 @@ body{
 .cadre .mainContent .menuLinks .link::before{
     content: "";
     position: absolute;
-    left: -60px;
-    top: 0;
-    width: 46px;
-    height: 46px;
+    left: -50px;
+    top: 3px;
+    width: 35px;
+    height: 35px;
     background-color: var(--second-color);
     border-radius: 50px;
     z-index: -1;
@@ -166,7 +172,7 @@ body{
 }
 
 .cadre .mainContent .menuLinks .link:hover::before{
-    width: calc(100% + 80px);
+    width: calc(100% + 70px);
 }
 
 .cadre .mainContent .menuLinks .link.red:hover::before{

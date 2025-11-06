@@ -1,4 +1,5 @@
-const links = document.querySelectorAll("a")
+function attachLinkListeners(){
+    const links = document.querySelectorAll(".internalLink")
 
     links.forEach(link => {
         link.addEventListener("click", (e) => {
@@ -15,8 +16,10 @@ const links = document.querySelectorAll("a")
             page = link.getAttribute("data-page")
             localStorage.setItem("currentPage", page);
             loadPage(page)
+            console.log(page)
             })
 
         
 
     });
+}

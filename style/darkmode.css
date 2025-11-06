@@ -71,27 +71,11 @@ body.darkmodeActived .cadre .mainContent .menuLinks .link.green:hover::before{
     background-color: var(--second-dark-color);
 }
 
-body.darkmodeActived .cadre .linksContainer .link{
-    color: var(--main-color);
-}
-
-body.darkmodeActived .cadre .linksContainer .link:hover{
-    color: var(--second-color);
-}
-
-body.darkmodeActived .cadre .linksContainer .projetLink:hover{
-    background-color: var(--first-dark-color);
-}
-
-body.darkmodeActived .cadre .linksContainer .aboutLink:hover{
-    background-color: var(--second-dark-color);
-}
-
-body.darkmodeActived .cadre .linksContainer .socialLinksContainer .socialLink{
+body.darkmodeActived .cadre .linksContainer .socialLink{
     fill: var(--main-color);
 }
 
-body.darkmodeActived .cadre .linksContainer .socialLinksContainer .socialLink:hover{
+body.darkmodeActived .cadre .linksContainer .socialLink:hover{
     fill: var(--third-dark-color);
 }
 

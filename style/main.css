@@ -14,6 +14,7 @@ body{
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    
 }
 
 .switchContainer .langue{
@@ -62,6 +63,69 @@ body{
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+}
+
+.cadre .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cadre .navbar .name{
+    opacity: 0;
+    font-size: 14px;
+}
+
+.cadre .navbar .name.actived{
+    opacity: 100%;
+}
+
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.buttonContainer .backHome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    gap: 15px;
+    transition: all .2s ease;
+}
+
+.buttonContainer .backHome:hover svg{
+    transform: scale(1.2);
+}
+
+.buttonContainer .backHome:hover p::before{
+    width: 100%;
+}
+
+.buttonContainer .backHome p{
+    position: relative;
+}
+
+.buttonContainer .backHome p::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--second-color);
+    height: 2px;
+    width: 0;
+    transition: all .2s ease;
+}
+
+.buttonContainer .backHome svg{
+    width: 25px;
+    transition: all .2s ease;
+}
+
+.buttonContainer .backHome.actived{
+    opacity: 100%;
 }
 
 .cadre .menuBurgerContainer{
@@ -122,6 +186,7 @@ body{
     gap: 40px;
     right: 100vw;
     transition: right .5s ease-in-out;
+    z-index: 1;
 }
 
 @media (max-width: 800px){
@@ -196,29 +261,12 @@ body{
 
 .cadre .linksContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-
-.cadre .linksContainer .link:hover{
-    color: var(--main-color);
-    transition: all .2s ease-in-out;
-}
-
-.cadre .linksContainer .projetLink:hover{
-    background-color: var(--first-light-color);
-}
-
-.cadre .linksContainer .aboutLink:hover{
-    background-color: var(--second-light-color);
-}
-
-.cadre .linksContainer .socialLinksContainer{
-    display: flex;
     gap: 20px;
 }
 
-.cadre .linksContainer .socialLinksContainer .socialLink{
+.cadre .linksContainer .socialLink{
     width: 24px;
     fill: var(--second-color);
     transition: 
@@ -226,7 +274,7 @@ body{
         transform .2s ease-in-out;
 }
 
-.cadre .linksContainer .socialLinksContainer .socialLink:hover{
+.cadre .linksContainer .socialLink:hover{
     fill: var(--third-light-color);
     transform: scale(1.1);
 }

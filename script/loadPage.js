@@ -14,4 +14,12 @@ async function loadPage(page) {
         console.error("Erreur de chargement :", error)
         pageContent.innerHTML = "<p>Erreur de chargement de la page.</p>"
     }
+        const backHome = document.querySelector(".backHome")
+
+    if(page !== "home"){
+        backHome.classList.add("actived")
+    }else{
+        backHome.classList.remove("actived")
+    }
+    attachLinkListeners()
 }

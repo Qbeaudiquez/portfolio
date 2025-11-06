@@ -28,3 +28,28 @@
 .cadre .mainContent .homePageContent .desc span.green{
     color: var(--second-light-color);
 }
+
+.cadre .mainContent .homePageContent .desc .projetLink{
+    margin-top: 30px;
+    display: block;
+    font-weight: 700;
+}
+
+.cadre .mainContent .homePageContent .desc .projetLink span{
+    position: relative;
+}
+
+.cadre .mainContent .homePageContent .desc .projetLink span::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--second-color);
+    height: 2px;
+    width: 0;
+    transition: all .2s ease;
+}
+
+.cadre .mainContent .homePageContent .desc .projetLink:hover span::before{
+    width: 100%;
+}

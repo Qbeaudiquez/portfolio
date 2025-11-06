@@ -74,7 +74,7 @@ body{
 
 .cadre .menuBurgerContainer .ring{
     width: 10px;
-    aspect-ratio: 1/1;
+    height: 10px;
     border-radius: 50px;
     transition: border-width .1s ease;
 }
@@ -124,6 +124,17 @@ body{
     right:0;
 }
 
+.menuBurgerContainer .ring.actived:not(:nth-child(4)){
+    opacity: 0;
+
+}
+
+.menuBurgerContainer .ring.actived:nth-child(4) {
+    border-color: var(--third-light-color);
+    width: 100%;
+    transition: width .4s ease-in-out;
+}
+
 .cadre .mainContent .menuLinks .link{
     font-size: 35px;
     position: relative;
@@ -138,7 +149,7 @@ body{
     top: 0;
     width: 46px;
     height: 46px;
-    background-color: black;
+    background-color: var(--second-color);
     border-radius: 50px;
     z-index: -1;
     transition: width .4s ease-in-out;

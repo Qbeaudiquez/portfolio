@@ -1,5 +1,8 @@
 const toggleContainer = document.querySelector(".toggleContainer")
 
 toggleContainer.addEventListener("click", () => {
-    document.body.classList.toggle("darkmodeActived")
+    const mode = toggleContainer.getAttribute("data-mode")
+    localStorage.setItem("currentMode", mode);
+    loadMode(mode)
+
 })

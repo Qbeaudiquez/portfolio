@@ -15,20 +15,8 @@ const links = document.querySelectorAll("a")
             page = link.getAttribute("data-page")
             localStorage.setItem("currentPage", page);
             loadPage(page)
-            console.log(page)
             })
 
         
 
     });
-
-    window.addEventListener("load", () => {
-    const savedPage = localStorage.getItem("currentPage");
-
-    
-    if (savedPage) {
-        loadPage(savedPage);
-    } else {
-        loadPage("home");
-    }
-});

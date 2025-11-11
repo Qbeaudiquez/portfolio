@@ -2,6 +2,7 @@ import { loadProjet } from './loadProjet.js'
 
 // Variable pour stocker les projets chargés
 let projetsCache = null
+let lastProjetListContainer = null
 
 export async function getProjets() {
     if (!projetsCache) {
@@ -33,23 +34,21 @@ export async function renderProjets(lang = 'fr') {
         projetListContainer.appendChild(projetCard)
     })
 
-    // Utiliser la délégation d'événements pour éviter l'accumulation d'event listeners
-    // Retirer tout listener existant avant d'en ajouter un nouveau
-    const newContainer = projetListContainer.cloneNode(true)
-    projetListContainer.parentNode.replaceChild(newContainer, projetListContainer)
-    
-    // Ajouter UN SEUL event listener sur le conteneur parent
-    newContainer.addEventListener('click', (e) => {
-        const projetCard = e.target.closest('.projetContainer')
-        if (projetCard) {
-            const projetId = projetCard.querySelector('.idProjet').textContent
-            localStorage.setItem('currentProjetId', projetId)
-            localStorage.setItem('currentPage', 'projet')
-            
-            const event = new CustomEvent('navigate', { detail: { page: 'projet' } })
-            window.dispatchEvent(event)
-        }
-    })
+    // Ajouter le listener seulement si c'est un nouveau conteneur
+    if (lastProjetListContainer !== projetListContainer) {
+        projetListContainer.addEventListener('click', (e) => {
+            const projetCard = e.target.closest('.projetContainer')
+            if (projetCard) {
+                const projetId = projetCard.querySelector('.idProjet').textContent
+                localStorage.setItem('currentProjetId', projetId)
+                localStorage.setItem('currentPage', 'projet')
+                
+                const event = new CustomEvent('navigate', { detail: { page: 'projet' } })
+                window.dispatchEvent(event)
+            }
+        })
+        lastProjetListContainer = projetListContainer
+    }
 }
 
 export async function renderProjetDetail(projetId, lang = 'fr') {

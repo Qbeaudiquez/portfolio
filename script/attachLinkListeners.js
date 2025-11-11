@@ -1,4 +1,4 @@
-function attachLinkListeners(){
+export function attachLinkListeners(onNavigate){
     const links = document.querySelectorAll(".internalLink")
 
     links.forEach(link => {
@@ -12,13 +12,10 @@ function attachLinkListeners(){
                 ring.classList.remove("actived")
             });
 
-            menuLinks.classList.remove("actived")
-            page = link.getAttribute("data-page")
+            if(menuLinks) menuLinks.classList.remove("actived")
+            const page = link.getAttribute("data-page")
             localStorage.setItem("currentPage", page);
-            loadPage(page)
-            })
-
-        
-
+            if(typeof onNavigate === 'function') onNavigate(page)
+        })
     });
 }

@@ -1,21 +1,20 @@
-    window.addEventListener("load", () => {
-    const savedPage = localStorage.getItem("currentPage");
+    import { loadPage } from './loadPage.js'
+    import { loadMode } from './loadMode.js'
+    import { initDarkmode } from './darkmode.js'
+    import { initBurgerMenu } from './burgerMenu.js'
 
-    if (savedPage) {
-        loadPage(savedPage);
-    } else {
-        loadPage("home");
-    }
-    
-    const savedMode = localStorage.getItem("currentMode")
+    window.addEventListener("load", async () => {
+        const savedPage = localStorage.getItem("currentPage") || "home";
+        const savedMode = localStorage.getItem("currentMode") || "light";
 
-    if (savedMode) {
-        loadMode(savedMode);
-    } else {
-        loadMode("light");
-    }
+        // Apply mode first so UI matches immediately
+        loadMode(savedMode)
+        // Wire mode toggling
+        initDarkmode()
 
-    
-});
+        // Initialize burger/menu interaction
+        initBurgerMenu()
 
-    
+        // Load the requested page (async)
+        await loadPage(savedPage)
+    });

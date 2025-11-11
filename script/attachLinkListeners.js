@@ -4,12 +4,15 @@ function handleLinkClick(e, onNavigate) {
 
     const menuLinks = document.querySelector(".menuLinks")
     const rings = document.querySelectorAll(".ring")
+    const name = document.querySelector(".name")
 
     rings.forEach(ring => {
         ring.classList.remove("actived")
     });
 
     if(menuLinks) menuLinks.classList.remove("actived")
+    if(name) name.classList.remove("actived")
+    
     const page = e.currentTarget.getAttribute("data-page")
     localStorage.setItem("currentPage", page);
     if(typeof onNavigate === 'function') onNavigate(page)

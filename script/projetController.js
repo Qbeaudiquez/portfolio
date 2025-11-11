@@ -32,6 +32,24 @@ export async function renderProjets(lang = 'fr') {
         const projetCard = createProjetCard(projet, lang)
         projetListContainer.appendChild(projetCard)
     })
+
+    // Utiliser la délégation d'événements pour éviter l'accumulation d'event listeners
+    // Retirer tout listener existant avant d'en ajouter un nouveau
+    const newContainer = projetListContainer.cloneNode(true)
+    projetListContainer.parentNode.replaceChild(newContainer, projetListContainer)
+    
+    // Ajouter UN SEUL event listener sur le conteneur parent
+    newContainer.addEventListener('click', (e) => {
+        const projetCard = e.target.closest('.projetContainer')
+        if (projetCard) {
+            const projetId = projetCard.querySelector('.idProjet').textContent
+            localStorage.setItem('currentProjetId', projetId)
+            localStorage.setItem('currentPage', 'projet')
+            
+            const event = new CustomEvent('navigate', { detail: { page: 'projet' } })
+            window.dispatchEvent(event)
+        }
+    })
 }
 
 export async function renderProjetDetail(projetId, lang = 'fr') {
@@ -176,16 +194,7 @@ function createProjetCard(projet, lang = 'fr') {
     projetContainer.appendChild(contentContainer)
     projetContainer.appendChild(dateContainer)
 
-    // Ajouter un événement de clic pour naviguer vers le détail du projet
-    projetContainer.addEventListener('click', () => {
-        // Sauvegarder l'ID du projet dans localStorage
-        localStorage.setItem('currentProjetId', projet.getId())
-        localStorage.setItem('currentPage', 'projet')
-        
-        // Déclencher le chargement de la page projet
-        const event = new CustomEvent('navigate', { detail: { page: 'projet' } })
-        window.dispatchEvent(event)
-    })
+    // Ne plus ajouter d'event listener ici - utiliser la délégation dans renderProjets()
 
     return projetContainer
 }

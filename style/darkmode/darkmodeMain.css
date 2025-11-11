@@ -1,9 +1,10 @@
+/* Darkmode - Styles principaux */
+
 body.darkmodeActived{
     background-color: var(--second-color);
 }
 
-/* Main */
-
+/* Toggle Switch */
 body.darkmodeActived .switchContainer .langue{
     color: var(--main-color);
 }
@@ -13,87 +14,104 @@ body.darkmodeActived .switchContainer .iconContainer{
     background-color: var(--second-color);
 }
 
+/* Cadre */
 body.darkmodeActived .cadre{
     border: 2px var(--main-color) solid;
 }
 
+/* Name */
+body.darkmodeActived .cadre .navbar .name{
+    color: var(--main-color);
+}
+
+/* Burger Menu */
 body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(1),
 body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(5),
 body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(9) {
-  border: solid 2px var(--third-dark-color);
+  border-color: var(--third-dark-color);
 }
 
 body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(2),
 body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(6),
 body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(7) {
-  border: solid 2px var(--first-dark-color);
+  border-color: var(--first-dark-color);
 }
 
 body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(3),
 body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(4),
 body.darkmodeActived .cadre .menuBurgerContainer .ring:nth-child(8) {
-  border: solid 2px var(--second-dark-color);
-}
-
-body.darkmodeActived .cadre .menuBurgerContainer:hover .ring{
-    border-width: 5px;
+  border-color: var(--second-dark-color);
 }
 
 body.darkmodeActived .menuBurgerContainer .ring.actived:nth-child(4){
     border-color: var(--third-dark-color);
 }
 
-body.darkmodeActived .cadre .mainContent .menuLinks{
+/* Menu Links */
+body.darkmodeActived .cadre .menuLinks{
     background-color: var(--second-color);
 }
 
-body.darkmodeActived .cadre .mainContent .menuLinks .link{
+body.darkmodeActived .cadre .menuLinks .link{
     color: var(--main-color);
 }
 
-body.darkmodeActived .cadre .mainContent .menuLinks .link::before{
+body.darkmodeActived .cadre .menuLinks .link::before{
     background-color: var(--main-color);
 }
 
-body.darkmodeActived .cadre .mainContent .menuLinks .link:hover{
+body.darkmodeActived .cadre .menuLinks .link:hover{
     color: var(--second-color);
 }
 
-body.darkmodeActived .cadre .mainContent .menuLinks .link.red:hover::before{
+body.darkmodeActived .cadre .menuLinks .link.red:hover::before{
     background-color: var(--third-dark-color);
 }
 
-body.darkmodeActived .cadre .mainContent .menuLinks .link.blue:hover::before{
+body.darkmodeActived .cadre .menuLinks .link.blue:hover::before{
     background-color: var(--first-dark-color);
 }
 
-body.darkmodeActived .cadre .mainContent .menuLinks .link.green:hover::before{
+body.darkmodeActived .cadre .menuLinks .link.green:hover::before{
     background-color: var(--second-dark-color);
 }
 
-body.darkmodeActived .cadre .linksContainer .socialLink{
+/* Social Links */
+body.darkmodeActived .linksContainer .socialLink{
     fill: var(--main-color);
 }
 
-body.darkmodeActived .cadre .linksContainer .socialLink:hover{
+body.darkmodeActived .linksContainer .socialLink:hover{
     fill: var(--third-dark-color);
 }
 
-/* Home */
-
-body.darkmodeActived .cadre .mainContent .title,
-body.darkmodeActived .cadre .mainContent .desc{
+/* Page Content - Styles généraux */
+body.darkmodeActived .pageContent .title,
+body.darkmodeActived .pageContent .desc{
     color: var(--main-color);
 }
 
-body.darkmodeActived .cadre .mainContent .desc span.red{
+body.darkmodeActived .pageContent .desc span.red{
     color: var(--third-dark-color);
 }
 
-body.darkmodeActived .cadre .mainContent .desc span.blue{
+body.darkmodeActived .pageContent .desc span.blue{
     color: var(--first-dark-color);
 }
 
-body.darkmodeActived .cadre .mainContent .desc span.green{
+body.darkmodeActived .pageContent .desc span.green{
     color: var(--second-dark-color);
+}
+
+/* Back Home Button */
+body.darkmodeActived .buttonContainer .backHome svg{
+    fill: var(--main-color);
+}
+
+body.darkmodeActived .buttonContainer .backHome p{
+    color: var(--main-color);
+}
+
+body.darkmodeActived .buttonContainer .backHome p::before{
+    background-color: var(--main-color);
 }

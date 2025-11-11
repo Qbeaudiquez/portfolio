@@ -1,0 +1,88 @@
+/* Projets Page (Liste) - Mode Light */
+
+.projetsPageContent{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projetsPageContent .title{
+    font-size: 24px;
+    color: var(--second-color);
+}
+
+.projetsPageContent .projetList{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.projetsPageContent .projetContainer{
+    background-color: var(--second-color);
+    color: var(--main-color);
+    padding: 20px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.projetsPageContent .projetContainer:hover{
+    background-color: var(--third-light-color);
+    transform: translateX(5px);
+}
+
+.projetsPageContent .idContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projetsPageContent .idProjet{
+    font-size: 24px;
+    font-family: var(--title-font);
+    color: var(--main-color);
+    transition: color 0.3s ease;
+}
+
+.projetsPageContent .contentContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.projetsPageContent .projetTitle{
+    font-size: 18px;
+    color: var(--main-color);
+    transition: color 0.3s ease;
+}
+
+.projetsPageContent .projetDescription{
+    font-size: 14px;
+    color: var(--main-color);
+    opacity: 0.9;
+    transition: color 0.3s ease;
+}
+
+.projetsPageContent .dateContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projetsPageContent .date{
+    font-size: 12px;
+    color: var(--main-color);
+    opacity: 0.8;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .projetsPageContent .projetContainer{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

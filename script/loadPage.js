@@ -5,9 +5,17 @@ export async function loadPage(page) {
     const pageContent = document.querySelector(".pageContent")
     const backHomeText = document.querySelector(".backHomeText")
     const backHome = document.querySelector(".backHome")
-    if(pageContent) pageContent.innerHTML = ""
+    
+    // Réinitialiser le contenu et les classes
+    if(pageContent) {
+        pageContent.innerHTML = ""
+        // Supprimer toutes les classes spécifiques de page précédentes
+        pageContent.className = 'pageContent'
+        // Ajouter la classe spécifique à la page actuelle
+        pageContent.classList.add(`${page}PageContent`)
+    }
 
-    const urlPage = `./pages/${page}.html`
+    const urlPage = `./html/pages/${page}.html`
 
     try {
         const response = await fetch(urlPage);
@@ -22,18 +30,27 @@ export async function loadPage(page) {
         
     switch(page) {
         case "projets":
-            if(backHome) backHome.style.opacity = "1";
+            if(backHome) {
+                backHome.style.opacity = "1";
+                backHome.setAttribute("data-page", "home");
+            }
             if(backHomeText) backHomeText.innerHTML = "Accueil";
             // Charger et afficher les projets
             await renderProjets('fr')
             break;
         case "about":
         case "contact":
-            if(backHome) backHome.style.opacity = "1";
+            if(backHome) {
+                backHome.style.opacity = "1";
+                backHome.setAttribute("data-page", "home");
+            }
             if(backHomeText) backHomeText.innerHTML = "Accueil";
             break;
         case "projet":
-            if(backHome) backHome.style.opacity = "1";
+            if(backHome) {
+                backHome.style.opacity = "1";
+                backHome.setAttribute("data-page", "projets");
+            }
             if(backHomeText) backHomeText.innerHTML = "Retour";
             // Charger et afficher le projet individuel
             const projetId = localStorage.getItem('currentProjetId')

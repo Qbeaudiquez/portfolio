@@ -1,9 +1,10 @@
 body{
     background-color: var(--main-color);
-    padding: 10px 45px 45px 45px;
+    padding: 20px 45px;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    transition: background-color 0.3s ease;
 }
 
 /* Switch buttons */
@@ -13,7 +14,6 @@ body{
     justify-content: end;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
     justify-self: end;
     
 }
@@ -21,7 +21,8 @@ body{
 .switchContainer .langue{
     font-family: var(--title-font);
     font-size: 14px;
-    transition: transform .2s ease-in-out;
+    color: var(--second-color);
+    transition: transform .2s ease-in-out, color 0.3s ease;
 }
 
 .switchContainer .langue:hover{
@@ -38,10 +39,11 @@ body{
     aspect-ratio: 2.5/1;
     height: var(--toggle-height);
     border-radius: 50px;
-    padding: 3px;
+    padding: 2.5px;
     display: flex;
     cursor: pointer;
     overflow: hidden;
+    transition: background-color 0.3s ease;
 }
 
 
@@ -51,7 +53,7 @@ body{
     aspect-ratio: 1/1;
     border-radius: 50px;
     position: relative;
-    
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Page */
@@ -60,10 +62,13 @@ body{
     border: 2px var(--second-color) solid;
     flex: 1;
     padding: 20px;
+    margin: 10px 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
+    overflow: auto;
+    position: relative;
+    transition: border-color 0.3s ease;
 }
 
 .cadre .navbar{
@@ -75,6 +80,8 @@ body{
 .cadre .navbar .name{
     opacity: 0;
     font-size: 14px;
+    color: var(--second-color);
+    transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .cadre .navbar .name.actived{
@@ -116,12 +123,14 @@ body{
     background-color: var(--second-color);
     height: 2px;
     width: 0;
-    transition: all .2s ease;
+    transition: all .2s ease, background-color 0.3s ease;
 }
 
 .buttonContainer .backHome svg{
-    width: 25px;
-    transition: all .2s ease;
+    width: 24px;
+    height: 24px;
+    fill: var(--second-color);
+    transition: all .2s ease, fill 0.3s ease;
 }
 
 .buttonContainer .backHome.actived{
@@ -140,7 +149,7 @@ body{
     width: 10px;
     height: 10px;
     border-radius: 50px;
-    transition: border-width .1s ease;
+    transition: border-width .1s ease, border-color 0.3s ease;
 }
 
 .cadre .menuBurgerContainer .ring:nth-child(1),
@@ -166,36 +175,72 @@ body{
 }
 
 .cadre .mainContent{
-    position: relative;
     flex: 1;
     align-self: center;
     justify-content: center;
     display: flex;
     padding: 20px 0px;
-    min-width: 245px;
+    width: 100%;
 }
 
-.cadre .mainContent .menuLinks{
+/* Page Content - Styles généraux pour toutes les pages */
+.pageContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.pageContent .title{
+    font-size: 24px;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+}
+
+.pageContent .desc{
+    font-size: 14px;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+}
+
+.pageContent .desc span{
+    font-weight: 700;
+}
+
+.pageContent .desc span.red{
+    color: var(--third-light-color);
+    transition: color 0.3s ease;
+}
+
+.pageContent .desc span.blue{
+    color: var(--first-light-color);
+    transition: color 0.3s ease;
+}
+
+.pageContent .desc span.green{
+    color: var(--second-light-color);
+    transition: color 0.3s ease;
+}
+
+/* Menu Links */
+.cadre .menuLinks{
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 80px);
     background-color: var(--main-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 40px;
     right: 100vw;
-    transition: right .5s ease-in-out;
+    transition: right .5s ease-in-out, background-color 0.3s ease;
     z-index: 1;
+    overflow: hidden;
+    top: 80px;
+    padding-left: 70px;
 }
 
-@media (max-width: 800px){
-    .cadre .mainContent .menuLinks{
-        padding-left: 70px;
-    }
-}
-
-.cadre .mainContent .menuLinks.actived{
+.cadre .menuLinks.actived{
     right:0;
 }
 
@@ -212,69 +257,76 @@ body{
 .menuBurgerContainer .ring.actived:nth-child(4) {
     border-color: var(--third-light-color);
     width: 100%;
-    transition: width .4s ease-in-out;
+    transition: width .4s ease-in-out, border-color 0.3s ease;
 }
 
 
-.cadre .mainContent .menuLinks .link{
+.cadre .menuLinks .link{
     font-size: 35px;
     position: relative;
     z-index: 0;
+    color: var(--second-color);
     transition: color .4s ease-in-out;
 }
 
-.cadre .mainContent .menuLinks .link::before{
+.cadre .menuLinks .link::before{
     content: "";
     position: absolute;
     left: -50px;
     top: 3px;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     background-color: var(--second-color);
     border-radius: 50px;
     z-index: -1;
-    transition: width .4s ease-in-out;
+    transition: width .4s ease-in-out, background-color 0.3s ease;
 }
 
-.cadre .mainContent .menuLinks .link:hover{
+.cadre .menuLinks .link:hover{
     color: var(--main-color);
 }
 
-.cadre .mainContent .menuLinks .link:hover::before{
+.cadre .menuLinks .link:hover::before{
     width: calc(100% + 70px);
 }
 
-.cadre .mainContent .menuLinks .link.red:hover::before{
+.cadre .menuLinks .link.red:hover::before{
     background-color: var(--third-light-color);
 }
 
-.cadre .mainContent .menuLinks .link.blue:hover::before{
+.cadre .menuLinks .link.blue:hover::before{
     background-color: var(--first-light-color);
 }
 
-.cadre .mainContent .menuLinks .link.green:hover::before{
+.cadre .menuLinks .link.green:hover::before{
     background-color: var(--second-light-color);
 }
 
 
 /* Links */
 
-.cadre .linksContainer{
+.linksContainer{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-.cadre .linksContainer .socialLink{
+.linksContainer .socialLinkContainer{
     width: 24px;
+    height: 24px;
+}
+
+.linksContainer .socialLink{
+    width: 24px;
+    height: 24px;
     fill: var(--second-color);
     transition: 
         fill .2s ease-in-out,
         transform .2s ease-in-out;
 }
 
-.cadre .linksContainer .socialLink:hover{
+.linksContainer .socialLink:hover{
     fill: var(--third-light-color);
     transform: scale(1.1);
 }

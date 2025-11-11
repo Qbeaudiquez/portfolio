@@ -1,0 +1,36 @@
+/* Home Page - Styles spécifiques */
+
+.homePageContent .ctaContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.homePageContent .ctaContainer .link{
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+}
+
+.homePageContent .ctaContainer .link span{
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.homePageContent .ctaContainer .link span::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--second-color);
+    height: 2px;
+    width: 0;
+    transition: all .2s ease, background-color 0.3s ease;
+}
+
+.homePageContent .ctaContainer .link:hover span::before{
+    width: 100%;
+}

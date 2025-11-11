@@ -1,0 +1,14 @@
+/* Darkmode Home Page */
+
+body.darkmodeActived .homePageContent .ctaContainer .link,
+body.darkmodeActived .homePageContent .ctaContainer .link span{
+    color: var(--main-color);
+}
+
+body.darkmodeActived .homePageContent .ctaContainer .link span::before{
+    background-color: var(--main-color);
+}
+
+body.darkmodeActived .homePageContent .ctaContainer .link:hover span{
+    color: var(--second-color);
+}

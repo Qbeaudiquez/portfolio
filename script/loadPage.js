@@ -17,15 +17,26 @@ async function loadPage(page) {
         pageContent.innerHTML = "<p>Erreur de chargement de la page.</p><br><a data-page=\"home\" class=\"internalLink link\">Retour à l'accueil</a>"
     }
         
-    if(page === "projets" || page === "about" || page === "contact"){
-        backHome.style.opacity = "1"
-        backHomeText.innerHTML = "Acceuil"
-    }else if(page === "projet"){
-        backHome.style.opacity = "1"
-        backHomeText.innerHTML = "Retour"
-    }else{
-        backHome.style.opacity = "0"
-        
-    }
+switch(page) {
+    case "projets":
+        backHome.style.opacity = "1";
+        backHomeText.innerHTML = "Accueil";
+        break;
+    case "about":
+        backHome.style.opacity = "1";
+        backHomeText.innerHTML = "Accueil";
+        break;
+    case "contact":
+        backHome.style.opacity = "1";
+        backHomeText.innerHTML = "Accueil";
+        break;
+    case "projet":
+        backHome.style.opacity = "1";
+        backHomeText.innerHTML = "Retour";
+        break;
+    default:
+        backHome.style.opacity = "0";
+        break;
+}
     attachLinkListeners()
 }

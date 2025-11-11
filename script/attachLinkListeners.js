@@ -16,7 +16,6 @@ function attachLinkListeners(){
             page = link.getAttribute("data-page")
             localStorage.setItem("currentPage", page);
             loadPage(page)
-            console.log(page)
             })
 
         

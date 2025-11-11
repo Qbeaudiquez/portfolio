@@ -1,0 +1,37 @@
+[
+    {
+        "title" : "Zoo Arcadia",
+        "description" : {
+            "petite" : {
+                "fr" : "Aplication de gestion d'un zoo",
+                "en" : "it is a projet test"
+            },
+            "grande" : {
+                "fr" : "Application web interactive pour découvrir et gérer le zoo Arcadia de façon ludique et intuitive.", 
+                "en" : "this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
+            }
+        },
+        "date" : "01/10/2024",
+        "role" : {
+            "fr" : "Développeur web",
+            "en" : "Web Developer"
+        },
+        "mission" : {
+            "fr" : "Analyse du projet, Conception UI/UX, Développement HTML/CSS/JS, Intégration des données animales, Gestion de l’interactivité (carrousel, pages détaillées), Optimisation des images, Responsive Design, SEO, Déploiement.",
+            "en" : "this is a much longer mission test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
+        },
+        "url" : "https://github.com/Qbeaudiquez/ArcadiaZoo",
+        "mashup" : "assets/zooarcadia/mashup.png",
+        "features" : {
+            "title" : {
+                "fr" : "teste feature",
+                "en" : "feature test"
+            },
+            "details" : {
+                "fr" : "il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. ",
+                "en" : " this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. "
+            },
+            "img" : "assets/zooarcadia/feature.png"
+        }
+    }
+]

@@ -3,7 +3,7 @@ import { Features } from './class/classFeatures.js'
 
 export async function loadProjet(){
     try {
-        const response = await fetch('../models/projet.json')
+        const response = await fetch("https://raw.githubusercontent.com/Qbeaudiquez/portfolio/main/models/projet.json")
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
         
         const data = await response.json()

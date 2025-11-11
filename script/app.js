@@ -17,4 +17,12 @@
 
         // Load the requested page (async)
         await loadPage(savedPage)
+
+        // Écouter les événements de navigation personnalisés
+        window.addEventListener('navigate', async (e) => {
+            const page = e.detail.page
+            if (page) {
+                await loadPage(page)
+            }
+        })
     });

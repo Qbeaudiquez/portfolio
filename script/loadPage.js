@@ -1,4 +1,5 @@
 import { attachLinkListeners } from './attachLinkListeners.js'
+import { renderProjets, renderProjetDetail } from './projetController.js'
 
 export async function loadPage(page) {
     const pageContent = document.querySelector(".pageContent")
@@ -21,6 +22,11 @@ export async function loadPage(page) {
         
     switch(page) {
         case "projets":
+            if(backHome) backHome.style.opacity = "1";
+            if(backHomeText) backHomeText.innerHTML = "Accueil";
+            // Charger et afficher les projets
+            await renderProjets('fr')
+            break;
         case "about":
         case "contact":
             if(backHome) backHome.style.opacity = "1";
@@ -29,6 +35,11 @@ export async function loadPage(page) {
         case "projet":
             if(backHome) backHome.style.opacity = "1";
             if(backHomeText) backHomeText.innerHTML = "Retour";
+            // Charger et afficher le projet individuel
+            const projetId = localStorage.getItem('currentProjetId')
+            if (projetId) {
+                await renderProjetDetail(projetId, 'fr')
+            }
             break;
         default:
             if(backHome) backHome.style.opacity = "0";

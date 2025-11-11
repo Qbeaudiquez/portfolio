@@ -1,5 +1,6 @@
 export class Projet{
-    constructor(title,description = [], date, role, missions, url, mashup, features = []){
+    constructor(title, description = {}, date, role, missions, url, mashup, features = [], id){
+        this.id = id
         this.title = title
         this.description = description
         this.date = date
@@ -10,29 +11,39 @@ export class Projet{
         this.features = features
     }
 
-    getTitle(lang){
-        return this.title[lang]
+    getId(){
+        return this.id
     }
 
-    getDescription(){
-        return this.description[lang]
+    getTitle(){
+        return this.title
     }
 
-    getRole(lang){
-        return this.role[lang]
+    getDescription(size = 'petite', lang = 'fr'){
+        return this.description[size]?.[lang] || ''
     }
 
-    getMissions(lang){
-        return this.missions[lang]
+    getDate(){
+        return this.date
     }
 
-    getUrl(lang){
-        return this.url[lang]
+    getRole(lang = 'fr'){
+        return this.role[lang] || ''
+    }
+
+    getMissions(lang = 'fr'){
+        return this.missions[lang] || ''
+    }
+
+    getUrl(){
+        return this.url
+    }
+
+    getMashup(){
+        return this.mashup
     }
 
     getFeatures(){
         return this.features
-        
     }
-
 }

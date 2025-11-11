@@ -1,5 +1,5 @@
 export class Features{
-    constructor(title,details, img){
+    constructor(title, details, img){
         this.title = title
         this.details = details
         this.img = img
@@ -12,5 +12,8 @@ export class Features{
     getDetails(lang = "fr"){
         return this.details[lang]
     }
-    
+
+    getImg(){
+        return this.img
+    }
 }

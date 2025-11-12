@@ -167,7 +167,7 @@
     text-align: center;
     padding: 20px;
     border-left: 3px solid var(--second-light-color);
-    background-color: var(--main-color-transparent);
+    background-color: var(--second-color-transparent);
     border-radius: 5px;
     transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
@@ -288,15 +288,17 @@
 /* Responsive */
 @media (max-width: 768px) {
     .aboutPageContent {
-        padding: 20px 10px;
+        padding: 20px 5px;
     }
 
     .aboutContentWrapper {
         gap: 40px;
+        padding-right: 5px;
     }
 
     .aboutPageContent .title{
         text-align: center;
+        font-size: 24px;
     }
     
     .aboutIntro {
@@ -304,8 +306,20 @@
         text-align: center;
     }
     
+    .introContent {
+        min-width: 100%;
+    }
+    
     .introGreeting {
-        font-size: 24px;
+        font-size: 22px;
+    }
+    
+    .introRole {
+        font-size: 16px;
+    }
+    
+    .introDescription {
+        font-size: 14px;
     }
     
     .introImage {
@@ -317,12 +331,71 @@
         height: 200px;
     }
     
+    .aboutJourney,
+    .aboutSkills,
+    .aboutPhilosophy,
+    .aboutPersonality {
+        padding: 20px;
+    }
+    
+    .sectionTitle {
+        font-size: 20px;
+    }
+    
+    .journeyText {
+        font-size: 14px;
+    }
+    
     .skillsGrid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .skillCategory {
+        padding: 15px;
+    }
+    
+    .categoryTitle {
+        font-size: 16px;
+    }
+    
+    .skillsList li {
+        font-size: 13px;
+    }
+    
+    .skillsPhilosophy {
+        font-size: 14px;
+        padding: 15px;
+    }
+    
+    .philosophyItem {
+        padding: 15px;
+    }
+    
+    .philosophyItem p {
+        font-size: 14px;
+    }
+    
+    .personalityText {
+        font-size: 14px;
+    }
+    
+    .aboutCta {
+        padding: 30px 15px;
+    }
+    
+    .ctaTitle {
+        font-size: 18px;
     }
     
     .ctaButtons {
         flex-direction: column;
         align-items: stretch;
+        gap: 15px;
+    }
+    
+    .ctaButton {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }

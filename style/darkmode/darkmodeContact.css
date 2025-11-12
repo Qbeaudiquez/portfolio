@@ -1,0 +1,72 @@
+/* Contact Page - Mode Dark */
+
+.darkmodeActived .introGreeting {
+    color: var(--main-color);
+}
+
+.darkmodeActived .introText {
+    color: var(--main-color);
+}
+
+.darkmodeActived .sectionTitle {
+    color: var(--main-color);
+}
+
+.darkmodeActived .contactCard:nth-child(1) .contactLabel {
+    color: var(--third-dark-color);
+}
+
+.darkmodeActived .contactCard:nth-child(2) .contactLabel {
+    color: var(--first-dark-color);
+}
+
+.darkmodeActived .contactCard:nth-child(3) .contactLabel {
+    color: var(--second-dark-color);
+}
+
+.darkmodeActived .contactCard:nth-child(4) .contactLabel {
+    color: var(--third-dark-color);
+}
+
+.darkmodeActived .contactCard:hover {
+    background-color: var(--main-color);
+}
+
+.darkmodeActived .contactCard:hover .contactValue,
+.darkmodeActived .contactCard:hover .contactLink,
+.darkmodeActived .contactCard:hover .contactDescription {
+    color: var(--second-color);
+}
+
+.darkmodeActived .contactNote {
+    color: var(--main-color);
+    border-left-color: var(--second-dark-color);
+}
+
+.darkmodeActived .ctaTitle {
+    color: var(--main-color);
+}
+
+.darkmodeActived .ctaText {
+    color: var(--main-color);
+}
+
+.darkmodeActived .closingText {
+    color: var(--main-color);
+}
+
+.darkmodeActived .signature {
+    background-color: var(--main-color);
+}
+
+.darkmodeActived .signatureName {
+    color: var(--second-color);
+}
+
+.darkmodeActived .signatureRole {
+    color: var(--second-color);
+}
+
+.darkmodeActived .signatureQuote {
+    color: var(--second-color);
+}

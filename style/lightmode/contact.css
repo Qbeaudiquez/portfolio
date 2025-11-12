@@ -1,0 +1,319 @@
+/* Contact Page - Mode Light */
+
+.contactPageContent {
+    justify-content: flex-start !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    overflow: visible !important;
+}
+
+.contactPageContent .title{
+    text-align: center;
+}
+
+.contactContentWrapper {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-right: 10px;
+}
+
+/* Introduction Section */
+.contactIntro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.introGreeting {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+}
+
+.introText {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+}
+
+/* Section Title */
+.sectionTitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+}
+
+/* Contact Methods Section */
+.contactMethods {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.contactCard {
+    background-color: var(--second-color);
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contactCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contactIcon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.contactLabel {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.contactLabel.red{
+    color: var(--third-dark-color);
+}
+
+.contactLabel.green{
+    color: var(--second-dark-color);
+}
+
+.contactLabel.blue{
+    color: var(--first-dark-color);
+}
+
+.contactValue {
+    font-size: 16px;
+    color: var(--main-color);
+    word-break: break-word;
+    margin: 0;
+}
+
+.contactLink {
+    font-size: 16px;
+    color: var(--main-color);
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.contactLink:hover {
+    opacity: 0.7;
+}
+
+.contactDescription {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--main-color);
+    opacity: 0.8;
+    margin: 0;
+}
+
+.contactNote {
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--second-color);
+    padding: 20px;
+    background-color: var(--main-color-transparent);
+    border-radius: 8px;
+    border-left: 3px solid var(--second-light-color);
+    transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Call to Action Section */
+.contactCta {
+    text-align: center;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, var(--main-color-transparent) 0%, transparent 100%);
+    border-radius: 10px;
+}
+
+.ctaTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+}
+
+.ctaText {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--second-color);
+    max-width: 700px;
+    margin: 0 auto;
+    transition: color 0.3s ease;
+}
+
+/* Closing Section */
+.contactClosing {
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.closingText {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--second-color);
+    max-width: 600px;
+    margin: 0 auto;
+    transition: color 0.3s ease;
+}
+
+.signature {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 30px;
+    background-color: var(--second-color);
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+.signatureName {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--main-color);
+    margin: 0;
+}
+
+.signatureRole {
+    font-size: 16px;
+    color: var(--main-color);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.signatureQuote {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--main-color);
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contactPageContent {
+        padding: 20px 5px;
+    }
+
+    .contactContentWrapper {
+        gap: 40px;
+        padding-right: 5px;
+    }
+
+    .contactPageContent .title {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .introGreeting {
+        font-size: 22px;
+    }
+
+    .introText {
+        font-size: 14px;
+    }
+
+    .sectionTitle {
+        font-size: 20px;
+    }
+
+    .contactMethods {
+        padding: 20px;
+    }
+
+    .contactGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contactCard {
+        padding: 25px 15px;
+    }
+
+    .contactIcon {
+        font-size: 40px;
+    }
+
+    .contactLabel {
+        font-size: 18px;
+    }
+
+    .contactValue,
+    .contactLink {
+        font-size: 14px;
+    }
+
+    .contactDescription {
+        font-size: 13px;
+    }
+
+    .contactNote {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .contactCta {
+        padding: 30px 15px;
+    }
+
+    .ctaTitle {
+        font-size: 20px;
+    }
+
+    .ctaText {
+        font-size: 14px;
+    }
+
+    .contactClosing {
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .closingText {
+        font-size: 14px;
+    }
+
+    .signature {
+        padding: 25px 20px;
+    }
+
+    .signatureName {
+        font-size: 18px;
+    }
+
+    .signatureRole {
+        font-size: 14px;
+    }
+
+    .signatureQuote {
+        font-size: 13px;
+    }
+}

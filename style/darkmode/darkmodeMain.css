@@ -4,6 +4,20 @@ body.darkmodeActived{
     background-color: var(--second-color);
 }
 
+/* Scrollbar en mode sombre */
+body.darkmodeActived ::-webkit-scrollbar-track {
+    background: var(--second-color);
+}
+
+body.darkmodeActived ::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border: 2px solid var(--second-color);
+}
+
+body.darkmodeActived ::-webkit-scrollbar-thumb:hover {
+    background: var(--first-dark-color);
+}
+
 body.darkmodeActived .buttonContainer .backArrow{
     stroke: #FFF9F1;
 }

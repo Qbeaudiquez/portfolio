@@ -8,6 +8,27 @@ body{
     transition: background-color 0.3s ease;
 }
 
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--main-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--second-color);
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--second-light-color);
+}
+
 /* Switch buttons */
 
 .switchContainer{

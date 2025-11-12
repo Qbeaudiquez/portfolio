@@ -6,9 +6,8 @@
 
 .homePageContent .ctaContainer{
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 5px;
+    flex-direction: column;
 }
 
 .homePageContent .ctaContainer .link{
@@ -17,6 +16,7 @@
     font-size: 14px;
     color: var(--second-color);
     transition: color 0.3s ease;
+    width: fit-content;
 }
 
 .homePageContent .ctaContainer .link span{

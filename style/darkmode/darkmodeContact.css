@@ -40,7 +40,7 @@
 
 .darkmodeActived .contactNote {
     color: var(--main-color);
-    border-left-color: var(--second-dark-color);
+    background-color: var(--main-color-transparent);
 }
 
 .darkmodeActived .ctaTitle {

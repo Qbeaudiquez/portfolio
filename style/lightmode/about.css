@@ -1,20 +1,17 @@
 /* About Page - Mode Light */
 
 .aboutPageContent {
-    justify-content: flex-start !important;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    overflow: visible !important;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .aboutContentWrapper {
-    overflow-y: auto;
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     gap: 60px;
-    padding-right: 10px;
 }
 
 /* Introduction Section */
@@ -32,13 +29,11 @@
 
 .introGreeting {
     font-size: 28px;
-    margin-bottom: 10px;
     transition: color 0.3s ease;
 }
 
 .introRole {
     font-size: 18px;
-    margin-bottom: 20px;
     font-weight: 600;
     transition: color 0.3s ease;
 }
@@ -67,39 +62,31 @@
 /* Section Title */
 .sectionTitle {
     font-size: 24px;
-    margin-bottom: 20px;
     transition: color 0.3s ease;
 }
 
 /* Journey Section */
 .aboutJourney {
     background-color: var(--main-color);
-    padding: 30px;
     border-radius: 10px;
     border: 2px solid var(--second-color);
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 20px;
 }
 
 .journeyText {
     font-size: 16px;
     line-height: 1.8;
-    margin-bottom: 15px;
     transition: color 0.3s ease;
-}
-
-.journeyText:last-child {
-    margin-bottom: 0;
 }
 
 .highlight {
     font-weight: 600;
-    padding: 2px 6px;
     border-radius: 4px;
 }
 
 /* Skills Section */
 .aboutSkills {
-    padding: 30px;
     border-radius: 10px;
 }
 
@@ -107,14 +94,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
-    margin-bottom: 30px;
 }
 
 .skillCategory {
     background-color: var(--second-color);
-    padding: 20px;
     border-radius: 8px;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 10px;
 }
 
 .skillCategory:hover {
@@ -123,8 +109,6 @@
 
 .categoryTitle {
     font-size: 18px;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
     border-bottom: 2px solid var(--main-color-transparent);
 }
 
@@ -142,12 +126,10 @@
 
 .skillsList {
     list-style: none;
-    padding: 0;
 }
 
 .skillsList li {
     font-size: 14px;
-    padding: 8px 0;
     color: var(--main-color);
     position: relative;
     padding-left: 20px;
@@ -165,17 +147,14 @@
     font-size: 16px;
     font-style: italic;
     text-align: center;
-    padding: 20px;
-    border-left: 3px solid var(--second-light-color);
     background-color: var(--second-color-transparent);
     border-radius: 5px;
     transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    padding: 20px;
+    margin-top: 10px;
 }
 
 /* Philosophy Section */
-.aboutPhilosophy {
-    padding: 30px;
-}
 
 .philosophyPoints {
     display: flex;
@@ -187,10 +166,10 @@
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    padding: 20px;
     background-color: var(--second-color-transparent);
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 10px;
 }
 
 .philosophyItem:hover {
@@ -220,30 +199,26 @@
 /* Personality Section */
 .aboutPersonality {
     text-align: center;
-    padding: 30px;
     border-radius: 10px;
 }
 
 .personalityText {
     font-size: 16px;
     line-height: 1.8;
-    max-width: 600px;
-    margin: 0 auto;
     transition: color 0.3s ease;
 }
 
 /* Call to Action Section */
 .aboutCta {
     text-align: center;
-    padding: 40px 20px;
     background-color: var(--second-color);
     border-radius: 10px;
     transition: background-color 0.3s ease;
+    padding: 20px;
 }
 
 .ctaTitle {
     font-size: 22px;
-    margin-bottom: 25px;
     color: var(--main-color);
 }
 
@@ -255,12 +230,12 @@
 }
 
 .ctaButton {
-    padding: 12px 30px;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    padding: 10px 20px;
 }
 
 .ctaButton.blue {
@@ -287,13 +262,8 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .aboutPageContent {
-        padding: 20px 5px;
-    }
-
     .aboutContentWrapper {
         gap: 40px;
-        padding-right: 5px;
     }
 
     .aboutPageContent .title{
@@ -331,13 +301,6 @@
         height: 200px;
     }
     
-    .aboutJourney,
-    .aboutSkills,
-    .aboutPhilosophy,
-    .aboutPersonality {
-        padding: 20px;
-    }
-    
     .sectionTitle {
         font-size: 20px;
     }
@@ -351,10 +314,6 @@
         gap: 20px;
     }
     
-    .skillCategory {
-        padding: 15px;
-    }
-    
     .categoryTitle {
         font-size: 16px;
     }
@@ -365,11 +324,6 @@
     
     .skillsPhilosophy {
         font-size: 14px;
-        padding: 15px;
-    }
-    
-    .philosophyItem {
-        padding: 15px;
     }
     
     .philosophyItem p {
@@ -378,10 +332,6 @@
     
     .personalityText {
         font-size: 14px;
-    }
-    
-    .aboutCta {
-        padding: 30px 15px;
     }
     
     .ctaTitle {
@@ -396,6 +346,5 @@
     
     .ctaButton {
         font-size: 14px;
-        padding: 10px 20px;
     }
 }

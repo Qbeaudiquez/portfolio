@@ -30,10 +30,6 @@
     color: var(--third-dark-color);
 }
 
-.darkmodeActived .skillsPhilosophy {
-    border-left-color: var(--second-dark-color);
-}
-
 .darkmodeActived .philosophyItem:hover {
     background-color: var(--main-color);
 }

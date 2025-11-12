@@ -9,10 +9,6 @@ body.darkmodeActived .homePageContent .ctaContainer .link span::before{
     background-color: var(--main-color);
 }
 
-body.darkmodeActived .homePageContent .ctaContainer .link:hover span{
-    color: var(--second-color);
-}
-
 body.darkmodeActived .homePageContent .title,
 body.darkmodeActived .homePageContent .desc{
     color: var(--main-color);

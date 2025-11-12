@@ -1,11 +1,11 @@
 /* Contact Page - Mode Light */
 
 .contactPageContent {
-    justify-content: flex-start !important;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    overflow: visible !important;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .contactPageContent .title{
@@ -13,12 +13,8 @@
 }
 
 .contactContentWrapper {
-    overflow-y: auto;
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    gap: 60px;
-    padding-right: 10px;
 }
 
 /* Introduction Section */
@@ -53,7 +49,6 @@
 
 /* Contact Methods Section */
 .contactMethods {
-    padding: 30px;
     border-radius: 10px;
 }
 
@@ -135,9 +130,8 @@
     font-style: italic;
     color: var(--second-color);
     padding: 20px;
-    background-color: var(--main-color-transparent);
+    background-color: var(--second-color-transparent);
     border-radius: 8px;
-    border-left: 3px solid var(--second-light-color);
     transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -145,7 +139,6 @@
 .contactCta {
     text-align: center;
     padding: 40px 30px;
-    background: linear-gradient(135deg, var(--main-color-transparent) 0%, transparent 100%);
     border-radius: 10px;
 }
 
@@ -217,103 +210,5 @@
     margin: 0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .contactPageContent {
-        padding: 20px 5px;
-    }
 
-    .contactContentWrapper {
-        gap: 40px;
-        padding-right: 5px;
-    }
 
-    .contactPageContent .title {
-        text-align: center;
-        font-size: 24px;
-    }
-
-    .introGreeting {
-        font-size: 22px;
-    }
-
-    .introText {
-        font-size: 14px;
-    }
-
-    .sectionTitle {
-        font-size: 20px;
-    }
-
-    .contactMethods {
-        padding: 20px;
-    }
-
-    .contactGrid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .contactCard {
-        padding: 25px 15px;
-    }
-
-    .contactIcon {
-        font-size: 40px;
-    }
-
-    .contactLabel {
-        font-size: 18px;
-    }
-
-    .contactValue,
-    .contactLink {
-        font-size: 14px;
-    }
-
-    .contactDescription {
-        font-size: 13px;
-    }
-
-    .contactNote {
-        font-size: 14px;
-        padding: 15px;
-    }
-
-    .contactCta {
-        padding: 30px 15px;
-    }
-
-    .ctaTitle {
-        font-size: 20px;
-    }
-
-    .ctaText {
-        font-size: 14px;
-    }
-
-    .contactClosing {
-        padding: 20px;
-        gap: 25px;
-    }
-
-    .closingText {
-        font-size: 14px;
-    }
-
-    .signature {
-        padding: 25px 20px;
-    }
-
-    .signatureName {
-        font-size: 18px;
-    }
-
-    .signatureRole {
-        font-size: 14px;
-    }
-
-    .signatureQuote {
-        font-size: 13px;
-    }
-}

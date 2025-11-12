@@ -1,1 +1,14 @@
 /* Darkmode Projets Page (Liste) */
+
+.darkmodeActived .projetsPageContent .projetList .projetContainer:hover .contentContainer .projetTitle::before,
+.darkmodeActived .projetsPageContent .projetList .projetContainer.mobile-hover .contentContainer .projetTitle::before{
+    background-color: var(--first-dark-color);
+}
+.darkmodeActived .projetsPageContent .projetList .projetContainer:hover .contentContainer .projetTitle::after,
+.darkmodeActived .projetsPageContent .projetList .projetContainer.mobile-hover .contentContainer .projetTitle::after{
+    background-color: var(--second-dark-color);
+}
+.darkmodeActived .projetsPageContent .projetList .projetContainer:hover .contentContainer .projetDescription::before,
+.darkmodeActived .projetsPageContent .projetList .projetContainer.mobile-hover .contentContainer .projetDescription::before{
+    background-color: var(--third-dark-color);
+}

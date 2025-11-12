@@ -140,16 +140,22 @@
 
 .projetsPageContent .projetList .projetContainer:hover .contentContainer .projetTitle::before,
 .projetsPageContent .projetList .projetContainer:hover .contentContainer .projetTitle::after,
-.projetsPageContent .projetList .projetContainer:hover .contentContainer .projetDescription::before{
+.projetsPageContent .projetList .projetContainer:hover .contentContainer .projetDescription::before,
+.projetsPageContent .projetList .projetContainer.mobile-hover .contentContainer .projetTitle::before,
+.projetsPageContent .projetList .projetContainer.mobile-hover .contentContainer .projetTitle::after,
+.projetsPageContent .projetList .projetContainer.mobile-hover .contentContainer .projetDescription::before{
     transform: scale(1.2);
 }
 
-.projetsPageContent .projetList .projetContainer:hover .contentContainer .projetTitle::before{
+.projetsPageContent .projetList .projetContainer:hover .contentContainer .projetTitle::before,
+.projetsPageContent .projetList .projetContainer.mobile-hover .contentContainer .projetTitle::before{
     background-color: var(--first-light-color);
 }
-.projetsPageContent .projetList .projetContainer:hover .contentContainer .projetTitle::after{
+.projetsPageContent .projetList .projetContainer:hover .contentContainer .projetTitle::after,
+.projetsPageContent .projetList .projetContainer.mobile-hover .contentContainer .projetTitle::after{
     background-color: var(--second-light-color);
 }
-.projetsPageContent .projetList .projetContainer:hover .contentContainer .projetDescription::before{
+.projetsPageContent .projetList .projetContainer:hover .contentContainer .projetDescription::before,
+.projetsPageContent .projetList .projetContainer.mobile-hover .contentContainer .projetDescription::before{
     background-color: var(--third-light-color);
 }

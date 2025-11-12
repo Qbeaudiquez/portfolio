@@ -2,6 +2,7 @@
     import { loadMode } from './loadMode.js'
     import { initDarkmode } from './darkmode.js'
     import { initBurgerMenu } from './burgerMenu.js'
+    import { initBouncingBalls } from './bouncingBalls.js'
 
     window.addEventListener("load", async () => {
         const savedPage = localStorage.getItem("currentPage") || "home";
@@ -14,6 +15,9 @@
 
         // Initialize burger/menu interaction
         initBurgerMenu()
+
+        // Initialize bouncing balls
+        initBouncingBalls()
 
         // Load the requested page (async)
         await loadPage(savedPage)

@@ -62,12 +62,18 @@ export async function renderProjets(lang = 'fr') {
         projetListContainer.addEventListener('click', (e) => {
             const projetCard = e.target.closest('.projetContainer')
             if (projetCard) {
-                const projetId = projetCard.querySelector('.idProjet').textContent
-                localStorage.setItem('currentProjetId', projetId)
-                localStorage.setItem('currentPage', 'projet')
+                // Ajouter la classe hover pour l'effet visuel sur mobile
+                projetCard.classList.add('mobile-hover')
                 
-                const event = new CustomEvent('navigate', { detail: { page: 'projet' } })
-                window.dispatchEvent(event)
+                // Attendre 300ms avant de naviguer
+                setTimeout(() => {
+                    const projetId = projetCard.querySelector('.idProjet').textContent
+                    localStorage.setItem('currentProjetId', projetId)
+                    localStorage.setItem('currentPage', 'projet')
+                    
+                    const event = new CustomEvent('navigate', { detail: { page: 'projet' } })
+                    window.dispatchEvent(event)
+                }, 300)
             }
         })
         lastProjetListContainer = projetListContainer

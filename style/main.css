@@ -360,3 +360,16 @@ body{
     fill: var(--third-light-color);
     transform: scale(1.1);
 }
+
+/* Page projet - Cacher la navbar */
+.cadre:has(.projetPageContent) .navbar {
+    display: none;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    /* Enlever le padding du cadre uniquement sur la page projet */
+    .cadre:has(.projetPageContent) {
+        padding: 0;
+    }
+}

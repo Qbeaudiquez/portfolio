@@ -152,7 +152,7 @@
 .ctaTitle {
     font-size: 24px;
     margin-bottom: 20px;
-    color: var(--second-color);
+    color: var(--main-color);
     transition: color 0.3s ease;
 }
 

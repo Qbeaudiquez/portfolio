@@ -1,25 +1,326 @@
 /* Projet Page (Détail) - Mode Light */
 
-.projetPageContent .mashup{
+.projetPageContent {
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    margin: -20px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: calc(100% + 40px);
+    width: calc(100% + 40px);
+}
+
+/* Container Title */
+.containerTitle {
+    width: 100%;
+    padding: 30px 30px 0 30px;
+}
+
+.containerTitle .title {
+    font-size: 32px;
+    color: var(--second-color);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+    line-height: 1.3;
+}
+
+/* Info Container */
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.infoContainer .desciption {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+    padding: 25px 30px;
+    background-color: var(--second-color);
+    border-radius: 8px;
+    color: var(--main-color);
+}
+
+.roleContainer,
+.missionContainer,
+.urlContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 30px;
+    background-color: var(--second-color);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.roleContainer:hover,
+.missionContainer:hover,
+.urlContainer:hover {
+    transform: translateX(8px);
+}
+
+.roleTitle,
+.missonTitle,
+.urlTitle {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.roleContent,
+.missionContent {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--main-color);
+    margin: 0;
+}
+
+.urlContainer .urlContent {
+    font-size: 16px;
+    color: var(--main-color);
+    text-decoration: underline;
+    word-break: break-all;
+    transition: opacity 0.3s ease;
+}
+
+.urlContainer .urlContent:hover {
+    opacity: 0.7;
+}
+
+/* Mashup */
+.mashup {
+    width: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mashup:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.mashup img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Features Container */
+.featuresContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 100%;
+    padding: 0 30px 30px 30px;
+}
+
+.featureContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background-color: var(--main-color-transparent);
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+}
+
+.featureContainer:hover {
+    transform: translateY(-3px);
+    background-color: var(--second-color);
+}
+
+.featureContainer:hover .featureName,
+.featureContainer:hover .featureDesciption {
+    color: var(--main-color);
+}
+
+.featureName {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.featureDesciption {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+    margin: 0 0 15px 0;
+}
+
+.featureImg {
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.projetPageContent .mashup img{
+.featureImg:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.featureImg img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.projetPageContent .featureImg{
-    width: 100%;
-    border-radius: 4px;
-    overflow: hidden;
+/* Responsive Mobile - Optimisé pour la lisibilité */
+@media (max-width: 768px) {
+    .projetPageContent {
+        gap: 30px;
+        margin: 0 !important;
+        height: 100%;
+        width: 100%;
+    }
+
+    .containerTitle {
+        padding: 20px 20px 0 20px;
+    }
+
+    .containerTitle .title {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .infoContainer {
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .infoContainer .desciption {
+        font-size: 15px;
+        line-height: 1.7;
+        padding: 20px;
+    }
+
+    .roleContainer,
+    .missionContainer,
+    .urlContainer {
+        padding: 20px;
+        gap: 8px;
+    }
+
+    .roleTitle,
+    .missonTitle,
+    .urlTitle {
+        font-size: 18px;
+    }
+
+    .roleContent,
+    .missionContent {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .urlContainer .urlContent {
+        font-size: 15px;
+    }
+
+    .mashup {
+        border-radius: 0;
+    }
+
+    .featuresContainer {
+        gap: 25px;
+        padding: 0 20px 20px 20px;
+    }
+
+    .featureContainer {
+        padding: 25px 20px;
+        gap: 15px;
+    }
+
+    .featureName {
+        font-size: 20px;
+        margin: 0 0 8px 0;
+    }
+
+    .featureDesciption {
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 0 0 12px 0;
+    }
+
+    .featureImg {
+        border-radius: 6px;
+    }
 }
 
-.projetPageContent .featureImg img{
-    width: 100%;
-    height: auto;
-    display: block;
+/* Très petit écran (< 400px) */
+@media (max-width: 400px) {
+    .projetPageContent {
+        gap: 20px;
+        margin: 0 !important;
+        height: 100%;
+        width: 100%;
+    }
+
+    .containerTitle {
+        padding: 15px 15px 0 15px;
+    }
+
+    .containerTitle .title {
+        font-size: 24px;
+    }
+
+    .infoContainer {
+        gap: 12px;
+        padding: 0 15px;
+    }
+
+    .infoContainer .desciption {
+        font-size: 14px;
+        padding: 18px 15px;
+    }
+
+    .roleContainer,
+    .missionContainer,
+    .urlContainer {
+        padding: 18px 15px;
+    }
+
+    .roleTitle,
+    .missonTitle,
+    .urlTitle {
+        font-size: 17px;
+    }
+
+    .roleContent,
+    .missionContent {
+        font-size: 14px;
+    }
+
+    .urlContainer .urlContent {
+        font-size: 14px;
+    }
+
+    .featuresContainer {
+        padding: 0 15px 15px 15px;
+    }
+
+    .featureContainer {
+        padding: 20px 15px;
+    }
+
+    .featureName {
+        font-size: 18px;
+    }
+
+    .featureDesciption {
+        font-size: 14px;
+    }
 }

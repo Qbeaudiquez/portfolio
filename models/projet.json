@@ -21,7 +21,7 @@
             "en" : "this is a much longer mission test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
         },
         "url" : "https://github.com/Qbeaudiquez/ArcadiaZoo",
-        "mashup" : "assets/zooarcadia/mashup.png",
+        "mashup" : "assets/zooArcadia/mashup.png",
         "features" : {
             "title" : {
                 "fr" : "teste feature",

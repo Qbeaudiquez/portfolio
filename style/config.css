@@ -36,6 +36,14 @@
     font-family: var(--content-font);
 }
 
+.darkmodeActived * {
+    color: var(--main-color);
+}
+
+.darkmodeActived {
+    
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: var(--title-font);
 }
@@ -47,4 +55,24 @@ button, a{
 
 li{
     list-style: none;
+}
+
+.red{
+    color: var(--third-light-color);
+}
+.green{
+    color: var(--second-dark-color);
+}
+.blue{
+    color: var(--first-light-color);
+}
+
+.darkmodeActived .red{
+    color: var(--third-dark-color);
+}
+.darkmodeActived .green{
+    color: var(--second-dark-color);
+}
+.darkmodeActived .blue{
+    color: var(--first-dark-color);
 }

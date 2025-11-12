@@ -1,69 +1,5 @@
 /* Projet Page (Détail) - Mode Light */
 
-.projetPageContent{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.projetPageContent .containerTitle{
-    margin-bottom: 10px;
-}
-
-.projetPageContent .containerTitle .title{
-    font-size: 28px;
-    color: var(--second-color);
-    transition: color 0.3s ease;
-}
-
-.projetPageContent .infoContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.projetPageContent .infoContainer .desciption{
-    font-size: 14px;
-    color: var(--second-color);
-    line-height: 1.6;
-    transition: color 0.3s ease;
-}
-
-.projetPageContent .roleContainer,
-.projetPageContent .missionContainer,
-.projetPageContent .urlContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.projetPageContent .roleTitle,
-.projetPageContent .missonTitle,
-.projetPageContent .urlTitle{
-    font-size: 16px;
-    color: var(--first-light-color);
-    transition: color 0.3s ease;
-}
-
-.projetPageContent .roleContent,
-.projetPageContent .missionContent{
-    font-size: 14px;
-    color: var(--second-color);
-    line-height: 1.6;
-    transition: color 0.3s ease;
-}
-
-.projetPageContent .urlContent{
-    font-size: 14px;
-    color: var(--second-light-color);
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.projetPageContent .urlContent:hover{
-    color: var(--third-light-color);
-}
-
 .projetPageContent .mashup{
     width: 100%;
     border-radius: 8px;
@@ -74,35 +10,6 @@
     width: 100%;
     height: auto;
     display: block;
-}
-
-.projetPageContent .featuresContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.projetPageContent .featureContainer{
-    background-color: var(--second-color);
-    padding: 20px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transition: background-color 0.3s ease;
-}
-
-.projetPageContent .featureName{
-    font-size: 18px;
-    color: var(--first-light-color);
-    transition: color 0.3s ease;
-}
-
-.projetPageContent .featureDesciption{
-    font-size: 14px;
-    color: var(--main-color);
-    line-height: 1.6;
-    transition: color 0.3s ease;
 }
 
 .projetPageContent .featureImg{

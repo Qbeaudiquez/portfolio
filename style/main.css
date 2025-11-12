@@ -192,8 +192,6 @@ body{
 }
 
 .pageContent .title{
-    font-size: 24px;
-    color: var(--second-color);
     transition: color 0.3s ease;
 }
 
@@ -205,21 +203,6 @@ body{
 
 .pageContent .desc span{
     font-weight: 700;
-}
-
-.pageContent .desc span.red{
-    color: var(--third-light-color);
-    transition: color 0.3s ease;
-}
-
-.pageContent .desc span.blue{
-    color: var(--first-light-color);
-    transition: color 0.3s ease;
-}
-
-.pageContent .desc span.green{
-    color: var(--second-light-color);
-    transition: color 0.3s ease;
 }
 
 /* Menu Links */

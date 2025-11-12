@@ -12,3 +12,20 @@ body.darkmodeActived .homePageContent .ctaContainer .link span::before{
 body.darkmodeActived .homePageContent .ctaContainer .link:hover span{
     color: var(--second-color);
 }
+
+body.darkmodeActived .homePageContent .title,
+body.darkmodeActived .homePageContent .desc{
+    color: var(--main-color);
+}
+
+body.darkmodeActived .homePageContent .desc span.red{
+    color: var(--third-dark-color);
+}
+
+body.darkmodeActived .homePageContent .desc span.blue{
+    color: var(--first-dark-color);
+}
+
+body.darkmodeActived .homePageContent .desc span.green{
+    color: var(--second-dark-color);
+}

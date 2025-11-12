@@ -85,24 +85,6 @@ body.darkmodeActived .linksContainer .socialLink:hover{
     fill: var(--third-dark-color);
 }
 
-/* Page Content - Styles généraux */
-body.darkmodeActived .pageContent .title,
-body.darkmodeActived .pageContent .desc{
-    color: var(--main-color);
-}
-
-body.darkmodeActived .pageContent .desc span.red{
-    color: var(--third-dark-color);
-}
-
-body.darkmodeActived .pageContent .desc span.blue{
-    color: var(--first-dark-color);
-}
-
-body.darkmodeActived .pageContent .desc span.green{
-    color: var(--second-dark-color);
-}
-
 /* Back Home Button */
 body.darkmodeActived .buttonContainer .backHome svg{
     fill: var(--main-color);

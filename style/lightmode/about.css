@@ -1,1 +1,5 @@
 /* About Page - Mode Light */
+
+.aboutPageContent {
+    justify-content: flex-start;
+}

@@ -1,5 +1,9 @@
 /* Home Page - Styles spécifiques */
 
+.homePageContent{
+    width: fit-content;
+}
+
 .homePageContent .ctaContainer{
     display: flex;
     justify-content: space-between;

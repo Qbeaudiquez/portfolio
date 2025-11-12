@@ -4,6 +4,10 @@ body.darkmodeActived{
     background-color: var(--second-color);
 }
 
+body.darkmodeActived .buttonContainer .backArrow{
+    stroke: #FFF9F1;
+}
+
 /* Toggle Switch */
 body.darkmodeActived .switchContainer .langue{
     color: var(--main-color);

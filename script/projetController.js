@@ -18,20 +18,43 @@ export async function getProjetById(id) {
 
 export async function renderProjets(lang = 'fr') {
     const projets = await getProjets()
-    const projetListContainer = document.querySelector('.projetList')
+    const pageContent = document.querySelector('.projetsPageContent')
     
-    if (!projetListContainer) {
-        console.error("Container .projetList non trouvé")
+    if (!pageContent) {
+        console.error("Container .projetsPageContent non trouvé")
         return
     }
 
-    // Vider le conteneur
-    projetListContainer.innerHTML = ''
+    // Créer la structure avec previewProjet et projetList
+    const projetsWrapper = document.createElement('div')
+    projetsWrapper.classList.add('projetsWrapper')
+    
+    const previewProjet = document.createElement('div')
+    previewProjet.classList.add('previewProjet')
+    
+    const projetListContainer = document.createElement('div')
+    projetListContainer.classList.add('projetList')
+    
+    // Assembler la structure
+    projetsWrapper.appendChild(previewProjet)
+    projetsWrapper.appendChild(projetListContainer)
+    
+    // Vider le pageContent et ajouter la nouvelle structure (après le titre)
+    const title = pageContent.querySelector('.title')
+    pageContent.innerHTML = ''
+    if (title) {
+        pageContent.appendChild(title)
+    }
+    pageContent.appendChild(projetsWrapper)
 
     // Créer une carte pour chaque projet
     projets.forEach(projet => {
-        const projetCard = createProjetCard(projet, lang)
+        const projetCard = createProjetCard(projet, lang, previewProjet)
+        const seperateCard = document.createElement('div')
+        seperateCard.classList.add('separateCard')
+        
         projetListContainer.appendChild(projetCard)
+        projetListContainer.appendChild(seperateCard)
     })
 
     // Ajouter le listener seulement si c'est un nouveau conteneur
@@ -152,7 +175,7 @@ function createFeatureElement(feature, lang = 'fr') {
     return featureContainer
 }
 
-function createProjetCard(projet, lang = 'fr') {
+function createProjetCard(projet, lang = 'fr', previewProjet) {
     // Créer le conteneur principal
     const projetContainer = document.createElement('div')
     projetContainer.classList.add('projetContainer')
@@ -193,7 +216,32 @@ function createProjetCard(projet, lang = 'fr') {
     projetContainer.appendChild(contentContainer)
     projetContainer.appendChild(dateContainer)
 
-    // Ne plus ajouter d'event listener ici - utiliser la délégation dans renderProjets()
+    // Ajouter les événements hover pour afficher le mashup (uniquement si > 850px)
+    if (previewProjet) {
+        projetContainer.addEventListener('mouseenter', () => {
+            if (window.innerWidth > 850 && projet.getMashup()) {
+                previewProjet.innerHTML = ''
+                const img = document.createElement('img')
+                img.src = projet.getMashup()
+                img.alt = `Mashup ${projet.getTitle()}`
+                img.classList.add('mashupPreview')
+                previewProjet.appendChild(img)
+                previewProjet.classList.add('visible')
+            }
+        })
+
+        projetContainer.addEventListener('mouseleave', () => {
+            if (window.innerWidth > 850) {
+                previewProjet.classList.remove('visible')
+                // Vider le contenu après la transition
+                setTimeout(() => {
+                    if (!previewProjet.classList.contains('visible')) {
+                        previewProjet.innerHTML = ''
+                    }
+                }, 300) // Correspond à la durée de la transition CSS
+            }
+        })
+    }
 
     return projetContainer
 }

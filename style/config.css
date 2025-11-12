@@ -6,7 +6,9 @@
         /*Main colors*/
 
         --main-color:#FFF9F1;
+        --main-color-transparent:#FFF9F133;
         --second-color:#343434;
+        --second-color-transparent:#34343433;
 
         /*Light mode*/
 
@@ -38,10 +40,6 @@
 
 .darkmodeActived * {
     color: var(--main-color);
-}
-
-.darkmodeActived {
-    
 }
 
 h1, h2, h3, h4, h5, h6{

@@ -32,6 +32,13 @@ export async function renderProjets(lang = 'fr') {
     const previewProjet = document.createElement('div')
     previewProjet.classList.add('previewProjet')
     
+    // Ajouter l'image par défaut au chargement
+    const defaultImg = document.createElement('img')
+    defaultImg.src = 'assets/defaultPreview.png'
+    defaultImg.alt = 'Aperçu par défaut'
+    defaultImg.classList.add('mashupPreview')
+    previewProjet.appendChild(defaultImg)
+    
     const projetListContainer = document.createElement('div')
     projetListContainer.classList.add('projetList')
     
@@ -123,7 +130,7 @@ export async function renderProjetDetail(projetId, lang = 'fr') {
     const mashupElement = document.querySelector('.mashup')
     if (mashupElement && projet.getMashup()) {
         const img = document.createElement('img')
-        img.src = `../${projet.getMashup()}`
+        img.src = `../../${projet.getMashup()}`
         img.alt = `Mashup ${projet.getTitle()}`
         mashupElement.innerHTML = ''
         mashupElement.appendChild(img)
@@ -153,6 +160,10 @@ function createFeatureElement(feature, lang = 'fr') {
     const featureContainer = document.createElement('div')
     featureContainer.classList.add('featureContainer')
 
+    // Conteneur pour le texte (nom + description)
+    const featureContent = document.createElement('div')
+    featureContent.classList.add('featureContent')
+
     // Nom de la feature
     const featureName = document.createElement('h3')
     featureName.classList.add('featureName')
@@ -169,13 +180,15 @@ function createFeatureElement(feature, lang = 'fr') {
     
     if (feature.getImg()) {
         const img = document.createElement('img')
-        img.src = `../${feature.getImg()}`
+        img.src = `../../${feature.getImg()}`
         img.alt = feature.getTitle(lang)
         featureImgContainer.appendChild(img)
     }
 
-    featureContainer.appendChild(featureName)
-    featureContainer.appendChild(featureDescription)
+    featureContent.appendChild(featureName)
+    featureContent.appendChild(featureDescription)
+    
+    featureContainer.appendChild(featureContent)
     featureContainer.appendChild(featureImgContainer)
 
     return featureContainer
@@ -226,24 +239,32 @@ function createProjetCard(projet, lang = 'fr', previewProjet) {
     if (previewProjet) {
         projetContainer.addEventListener('mouseenter', () => {
             if (window.innerWidth > 850 && projet.getMashup()) {
-                previewProjet.innerHTML = ''
-                const img = document.createElement('img')
-                img.src = projet.getMashup()
-                img.alt = `Mashup ${projet.getTitle()}`
-                img.classList.add('mashupPreview')
-                previewProjet.appendChild(img)
-                previewProjet.classList.add('visible')
+                previewProjet.style.opacity = '0'
+                setTimeout(() => {
+                    previewProjet.innerHTML = ''
+                    const img = document.createElement('img')
+                    img.src = projet.getMashup()
+                    img.alt = `Mashup ${projet.getTitle()}`
+                    img.classList.add('mashupPreview')
+                    previewProjet.appendChild(img)
+                    previewProjet.style.opacity = '1'
+                }, 300)
             }
         })
 
         projetContainer.addEventListener('mouseleave', () => {
             if (window.innerWidth > 850) {
                 previewProjet.classList.remove('visible')
-                // Vider le contenu après la transition
+                // Afficher l'image par défaut après la transition
+                previewProjet.style.opacity = '0'
                 setTimeout(() => {
-                    if (!previewProjet.classList.contains('visible')) {
                         previewProjet.innerHTML = ''
-                    }
+                        const defaultImg = document.createElement('img')
+                        defaultImg.src = 'assets/defaultPreview.png'
+                        defaultImg.alt = 'Aperçu par défaut'
+                        defaultImg.classList.add('mashupPreview')
+                        previewProjet.appendChild(defaultImg)
+                        previewProjet.style.opacity = '1'
                 }, 300) // Correspond à la durée de la transition CSS
             }
         })

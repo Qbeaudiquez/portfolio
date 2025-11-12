@@ -1,7 +1,8 @@
 import { attachLinkListeners } from './attachLinkListeners.js'
 import { renderProjets, renderProjetDetail } from './projetController.js'
+import { translatePage } from './translations.js'
 
-export async function loadPage(page) {
+export async function loadPage(page, lang = 'fr') {
     const pageContent = document.querySelector(".pageContent")
     const backHomeText = document.querySelector(".backHomeText")
     const backHome = document.querySelector(".backHome")
@@ -25,7 +26,9 @@ export async function loadPage(page) {
         if(pageContent) pageContent.innerHTML = content
     } catch (error) {
         console.error("Erreur de chargement :", error)
-        if(pageContent) pageContent.innerHTML = "<p>Erreur de chargement de la page.</p><br><a data-page=\"home\" class=\"internalLink link\">Retour à l'accueil</a>"
+        const errorText = lang === 'fr' ? "Erreur de chargement de la page." : "Page loading error."
+        const linkText = lang === 'fr' ? "Retour à l'accueil" : "Back to home"
+        if(pageContent) pageContent.innerHTML = `<p>${errorText}</p><br><a data-page="home" class="internalLink link">${linkText}</a>`
     }
         
     switch(page) {
@@ -34,9 +37,9 @@ export async function loadPage(page) {
                 backHome.style.opacity = "1";
                 backHome.setAttribute("data-page", "home");
             }
-            if(backHomeText) backHomeText.innerHTML = "Accueil";
+            if(backHomeText) backHomeText.innerHTML = lang === 'fr' ? "Accueil" : "Home";
             // Charger et afficher les projets
-            await renderProjets('fr')
+            await renderProjets(lang)
             break;
         case "about":
         case "contact":
@@ -44,24 +47,27 @@ export async function loadPage(page) {
                 backHome.style.opacity = "1";
                 backHome.setAttribute("data-page", "home");
             }
-            if(backHomeText) backHomeText.innerHTML = "Accueil";
+            if(backHomeText) backHomeText.innerHTML = lang === 'fr' ? "Accueil" : "Home";
             break;
         case "projet":
             if(backHome) {
                 backHome.style.opacity = "1";
                 backHome.setAttribute("data-page", "projets");
             }
-            if(backHomeText) backHomeText.innerHTML = "Retour";
+            if(backHomeText) backHomeText.innerHTML = lang === 'fr' ? "Retour" : "Back";
             // Charger et afficher le projet individuel
             const projetId = localStorage.getItem('currentProjetId')
             if (projetId) {
-                await renderProjetDetail(projetId, 'fr')
+                await renderProjetDetail(projetId, lang)
             }
             break;
         default:
             if(backHome) backHome.style.opacity = "0";
             break;
     }
+
+    // Traduire la page
+    translatePage(page, lang)
 
     // Attach listeners to links inside the newly loaded content
     attachLinkListeners(loadPage)

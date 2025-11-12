@@ -1,21 +1,13 @@
+import { getCurrentLang } from './language.js'
+
 // Fonction pour gérer le clic sur un lien
 function handleLinkClick(e, onNavigate) {
     e.preventDefault();
-
-    const menuLinks = document.querySelector(".menuLinks")
-    const rings = document.querySelectorAll(".ring")
-    const name = document.querySelector(".name")
-
-    rings.forEach(ring => {
-        ring.classList.remove("actived")
-    });
-
-    if(menuLinks) menuLinks.classList.remove("actived")
-    if(name) name.classList.remove("actived")
     
     const page = e.currentTarget.getAttribute("data-page")
+    const currentLang = getCurrentLang()
     localStorage.setItem("currentPage", page);
-    if(typeof onNavigate === 'function') onNavigate(page)
+    if(typeof onNavigate === 'function') onNavigate(page, currentLang)
 }
 
 export function attachLinkListeners(onNavigate){

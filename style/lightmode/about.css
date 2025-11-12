@@ -1,5 +1,328 @@
 /* About Page - Mode Light */
 
 .aboutPageContent {
-    justify-content: flex-start;
+    justify-content: flex-start !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    overflow: visible !important;
+}
+
+.aboutContentWrapper {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-right: 10px;
+}
+
+/* Introduction Section */
+.aboutIntro {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.introContent {
+    flex: 1;
+    min-width: 300px;
+}
+
+.introGreeting {
+    font-size: 28px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.introRole {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.introDescription {
+    font-size: 16px;
+    line-height: 1.8;
+    transition: color 0.3s ease;
+}
+
+.introImage {
+    flex: 0 0 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.introImage img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--first-light-color);
+    transition: border-color 0.3s ease;
+}
+
+/* Section Title */
+.sectionTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Journey Section */
+.aboutJourney {
+    background-color: var(--main-color);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid var(--second-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.journeyText {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.journeyText:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Skills Section */
+.aboutSkills {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.skillCategory {
+    background-color: var(--second-color);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skillCategory:hover {
+    transform: translateY(-5px);
+}
+
+.categoryTitle {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--main-color-transparent);
+}
+
+.categoryTitle.red{
+    color: var(--third-dark-color);
+}
+
+.categoryTitle.blue{
+    color: var(--first-dark-color);
+}
+
+.categoryTitle.green{
+    color: var(--second-dark-color);
+}
+
+.skillsList {
+    list-style: none;
+    padding: 0;
+}
+
+.skillsList li {
+    font-size: 14px;
+    padding: 8px 0;
+    color: var(--main-color);
+    position: relative;
+    padding-left: 20px;
+}
+
+.skillsList li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.skillsPhilosophy {
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    border-left: 3px solid var(--second-light-color);
+    background-color: var(--main-color-transparent);
+    border-radius: 5px;
+    transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Philosophy Section */
+.aboutPhilosophy {
+    padding: 30px;
+}
+
+.philosophyPoints {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.philosophyItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--second-color-transparent);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.philosophyItem:hover {
+    transform: translateX(10px);
+    background-color: var(--second-color);
+}
+
+.philosophyItem:hover p {
+    color: var(--main-color);
+}
+
+.philosophyItem:hover strong {
+    color: var(--main-color);
+}
+
+.philosophyIcon {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.philosophyItem p {
+    font-size: 16px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+/* Personality Section */
+.aboutPersonality {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.personalityText {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: color 0.3s ease;
+}
+
+/* Call to Action Section */
+.aboutCta {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--second-color);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.ctaTitle {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: var(--main-color);
+}
+
+.ctaButtons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ctaButton {
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.ctaButton.blue {
+    background-color: var(--first-dark-color);
+    color: var(--second-color);
+}
+
+.ctaButton.blue:hover {
+    background-color: transparent;
+    border-color: var(--first-dark-color);
+    color: var(--first-dark-color);
+}
+
+.ctaButton.secondary {
+    background-color: transparent;
+    border: 2px solid var(--second-dark-color);
+    color: var(--second-dark-color);
+}
+
+.ctaButton.secondary:hover {
+    background-color: var(--second-light-color);
+    color: var(--main-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .aboutPageContent {
+        padding: 20px 10px;
+    }
+
+    .aboutContentWrapper {
+        gap: 40px;
+    }
+
+    .aboutPageContent .title{
+        text-align: center;
+    }
+    
+    .aboutIntro {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .introGreeting {
+        font-size: 24px;
+    }
+    
+    .introImage {
+        flex: 0 0 200px;
+    }
+    
+    .introImage img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ctaButtons {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }

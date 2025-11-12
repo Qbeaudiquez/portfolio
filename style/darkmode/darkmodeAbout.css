@@ -1,0 +1,62 @@
+/* About Page - Mode Dark */
+
+.darkmodeActived .introImage img {
+    border-color: var(--first-dark-color);
+}
+
+.darkmodeActived .sectionTitle {
+    border-left-color: var(--first-dark-color);
+}
+
+.darkmodeActived .aboutJourney{
+    background-color: var(--second-color);
+    border-color: var(--main-color);
+
+}
+
+.darkmodeActived .skillCategory:nth-child(1) .categoryTitle {
+    color: var(--third-dark-color);
+}
+
+.darkmodeActived .skillCategory:nth-child(2) .categoryTitle {
+    color: var(--first-dark-color);
+}
+
+.darkmodeActived .skillCategory:nth-child(3) .categoryTitle {
+    color: var(--second-dark-color);
+}
+
+.darkmodeActived .skillCategory:nth-child(4) .categoryTitle {
+    color: var(--third-dark-color);
+}
+
+.darkmodeActived .skillsPhilosophy {
+    border-left-color: var(--second-dark-color);
+}
+
+.darkmodeActived .philosophyItem:hover {
+    background-color: var(--main-color);
+}
+
+.darkmodeActived .philosophyItem:hover p,
+.darkmodeActived .philosophyItem:hover p strong {
+    color: var(--second-color);
+}
+
+.darkmodeActived .ctaButton.blue {
+    background-color: var(--first-dark-color);
+}
+
+.darkmodeActived .ctaButton.blue:hover {
+    border-color: var(--first-dark-color);
+    color: var(--first-dark-color);
+}
+
+.darkmodeActived .ctaButton.secondary {
+    border-color: var(--second-dark-color);
+    color: var(--second-dark-color);
+}
+
+.darkmodeActived .ctaButton.secondary:hover {
+    background-color: var(--second-dark-color);
+}

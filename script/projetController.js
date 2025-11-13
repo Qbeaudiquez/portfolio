@@ -130,7 +130,7 @@ export async function renderProjetDetail(projetId, lang = 'fr') {
     const mashupElement = document.querySelector('.mashup')
     if (mashupElement && projet.getMashup()) {
         const img = document.createElement('img')
-        img.src = `../../${projet.getMashup()}`
+        img.src = `${projet.getMashup()}`
         img.alt = `Mashup ${projet.getTitle()}`
         mashupElement.innerHTML = ''
         mashupElement.appendChild(img)
@@ -180,7 +180,7 @@ function createFeatureElement(feature, lang = 'fr') {
     
     if (feature.getImg()) {
         const img = document.createElement('img')
-        img.src = `../../${feature.getImg()}`
+        img.src = `${feature.getImg()}`
         img.alt = feature.getTitle(lang)
         featureImgContainer.appendChild(img)
     }
@@ -243,7 +243,7 @@ function createProjetCard(projet, lang = 'fr', previewProjet) {
                 setTimeout(() => {
                     previewProjet.innerHTML = ''
                     const img = document.createElement('img')
-                    img.src = projet.getMashup()
+                    img.src = "./" + projet.getMashup()
                     img.alt = `Mashup ${projet.getTitle()}`
                     img.classList.add('mashupPreview')
                     previewProjet.appendChild(img)
@@ -256,16 +256,13 @@ function createProjetCard(projet, lang = 'fr', previewProjet) {
             if (window.innerWidth > 850) {
                 previewProjet.classList.remove('visible')
                 // Afficher l'image par défaut après la transition
-                previewProjet.style.opacity = '0'
-                setTimeout(() => {
                         previewProjet.innerHTML = ''
                         const defaultImg = document.createElement('img')
-                        defaultImg.src = 'assets/defaultPreview.png'
+                        defaultImg.src = './assets/defaultPreview.png'
                         defaultImg.alt = 'Aperçu par défaut'
                         defaultImg.classList.add('mashupPreview')
                         previewProjet.appendChild(defaultImg)
-                        previewProjet.style.opacity = '1'
-                }, 300) // Correspond à la durée de la transition CSS
+                // Correspond à la durée de la transition CSS
             }
         })
     }

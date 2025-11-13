@@ -34,8 +34,9 @@ export const translations = {
             role: "Développeur web et mobile en formation",
             description: "Passionné par la création d'expériences numériques simples et élégantes, j'aime transformer des idées en projets concrets à travers le code.",
             journeyTitle: "Mon parcours",
-            journeyPara1: "J'ai suivi une formation de développeur web et web mobile chez Studi, où j'ai appris à concevoir des interfaces, manipuler des bases de données, et mettre en ligne des applications complètes.",
-            journeyPara2: "Actuellement en Bachelor Développeur Web Full Stack, je continue d'explorer les technologies modernes comme Docker, Symfony, React ou MongoDB à travers mes projets personnels.",
+            journeyPara1: "Avant de me tourner vers le développement web, j'ai travaillé plusieurs années dans le domaine de <span class=\"highlight blue\">la restauration</span>, un environnement exigeant qui m'a appris la rigueur, la gestion du stress et le travail d'équipe. Ces compétences humaines me servent aujourd'hui au quotidien dans mes projets techniques.",
+            journeyPara2: "Passionné par le numérique et curieux de comprendre le fonctionnement des applications, j'ai décidé d'effectuer une reconversion professionnelle. J'ai suivi la formation <span class=\"highlight green\">Développeur Web et Web Mobile</span> chez Studi, que j'ai validée avec succès en passant la certification officielle, tout en continuant à travailler dans la restauration. Cette expérience m'a permis de développer une grande autonomie et une forte capacité d'adaptation.",
+            journeyPara3: "Actuellement en <span class=\"highlight red\">Bachelor Développeur Web Full Stack</span>, je continue d'approfondir mes compétences à travers des projets personnels, en explorant des technologies modernes telles que Docker, Symfony, React ou MongoDB, avec l'objectif de devenir un développeur polyvalent capable de concevoir des applications performantes de bout en bout.",
             skillsTitle: "Compétences & Outils",
             frontend: "Front-end",
             backend: "Back-end",
@@ -58,8 +59,9 @@ export const translations = {
             role: "Web and mobile developer in training",
             description: "Passionate about creating simple and elegant digital experiences, I love transforming ideas into concrete projects through code.",
             journeyTitle: "My journey",
-            journeyPara1: "I completed a Web and Mobile Web Development training at Studi, where I learned to design interfaces, work with databases, and deploy complete applications.",
-            journeyPara2: "Currently enrolled in a Bachelor's in Full Stack Web Development, I continue to explore modern technologies like Docker, Symfony, React and MongoDB through personal projects.",
+            journeyPara1: "Before turning to web development, I spent several years working in <span class=\"highlight blue\">the restaurant industry</span> — a demanding environment that taught me discipline, stress management, and teamwork. These human skills continue to serve me every day in my technical projects.",
+            journeyPara2: "Driven by curiosity and a passion for technology, I decided to make a career change. I completed the <span class=\"highlight green\">Web and Mobile Web Developer</span> program at Studi, earning my official certification while still working in the restaurant field. This experience allowed me to develop strong autonomy and adaptability.",
+            journeyPara3: "Currently pursuing a <span class=\"highlight red\">Bachelor's degree in Full Stack Web Development</span>, I continue to expand my skills through personal projects, exploring modern technologies such as Docker, Symfony, React, and MongoDB, with the goal of becoming a versatile developer capable of building efficient applications from start to finish.",
             skillsTitle: "Skills & Tools",
             frontend: "Front-end",
             backend: "Back-end",
@@ -158,7 +160,8 @@ export function translatePage(page, lang) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = trans[key]
             } else {
-                element.textContent = trans[key]
+                // Use innerHTML to preserve inner HTML tags like <span>, <strong>, etc.
+                element.innerHTML = trans[key]
             }
         }
     })

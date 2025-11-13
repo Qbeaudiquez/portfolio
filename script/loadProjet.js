@@ -9,12 +9,27 @@ export async function loadProjet(){
         const data = await response.json()
 
         return data.map((projet, index) => {
-            // Créer l'objet Features à partir de l'objet features (pas un tableau dans le JSON)
-            const features = new Features(
-                projet.features.title,
-                projet.features.details,
-                projet.features.img
-            )
+            // Gérer les features : soit un objet unique (ancien format), soit un tableau
+            let featuresArray = []
+            
+            if (Array.isArray(projet.features)) {
+                // Nouveau format : tableau de features
+                featuresArray = projet.features.map(feature => 
+                    new Features(
+                        feature.title,
+                        feature.details,
+                        feature.img
+                    )
+                )
+            } else {
+                // Ancien format : objet unique
+                const features = new Features(
+                    projet.features.title,
+                    projet.features.details,
+                    projet.features.img
+                )
+                featuresArray = [features]
+            }
             
             return new Projet(
                 projet.title,
@@ -24,7 +39,7 @@ export async function loadProjet(){
                 projet.mission,
                 projet.url,
                 projet.mashup,
-                [features], // Array avec une seule feature
+                featuresArray,
                 index + 1 // ID du projet
             )
         })

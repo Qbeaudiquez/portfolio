@@ -1,177 +1,278 @@
 [
     {
-        "title" : "Zoo Arcadia",
-        "description" : {
-            "petite" : {
-                "fr" : "Aplication de gestion d'un zoo",
-                "en" : "it is a projet test"
+        "title": "Zoo Arcadia",
+        "description": {
+            "petite": {
+                "fr": "Gestion et vitrine d'un parc zoologique",
+                "en": "Management and showcase of a zoological park"
             },
-            "grande" : {
-                "fr" : "Application web interactive pour découvrir et gérer le zoo Arcadia de façon ludique et intuitive.", 
-                "en" : "this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
+            "grande": {
+                "fr": "Zoo Arcadia est une application web développée entre juillet et septembre 2024, combinant une interface publique pour les visiteurs et un espace administrateur destiné à la gestion des animaux et du personnel. L'application offre une expérience interactive, fluide et responsive, intégrant des fonctionnalités dynamiques pour présenter le parc et ses habitants tout en permettant une gestion efficace des contenus et des utilisateurs.",
+                "en": "Zoo Arcadia is a web application developed between July and September 2024, combining a public interface for visitors and an administrator space for managing animals and staff. The application offers an interactive, smooth and responsive experience, integrating dynamic features to present the park and its inhabitants while enabling efficient content and user management."
             }
         },
-        "date" : "01/10/2024",
-        "role" : {
-            "fr" : "Développeur web",
-            "en" : "Web Developer"
+        "date": "01/09/2024",
+        "role": {
+            "fr": "Développeur Full Stack",
+            "en": "Full Stack Developer"
         },
-        "mission" : {
-            "fr" : "Analyse du projet, Conception UI/UX, Développement HTML/CSS/JS, Intégration des données animales, Gestion de l’interactivité (carrousel, pages détaillées), Optimisation des images, Responsive Design, SEO, Déploiement.",
-            "en" : "this is a much longer mission test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
+        "mission": {
+            "fr": "La mission consistait à concevoir et développer l'ensemble de l'application, depuis l'architecture front-end et back-end jusqu'à la modélisation complète de la base de données MySQL. J'ai mis en place une structure MVC simplifiée pour séparer la logique métier de la présentation, développé un espace administrateur sécurisé pour gérer les animaux, le personnel et les rapports d'observation, et intégré des composants interactifs comme un carrousel d'images et le chargement dynamique des contenus via JavaScript. L'objectif était d'assurer une interface intuitive et ergonomique, optimisée pour tous les types d'écrans, tout en garantissant la sécurité et la maintenabilité du code.",
+            "en": "The mission involved designing and developing the entire application, from front-end and back-end architecture to complete MySQL database modeling. I implemented a simplified MVC structure to separate business logic from presentation, developed a secure administrator area to manage animals, staff and observation reports, and integrated interactive components such as an image carousel and dynamic content loading via JavaScript. The goal was to ensure an intuitive and ergonomic interface, optimized for all screen types, while guaranteeing code security and maintainability."
         },
-        "url" : "https://github.com/Qbeaudiquez/ArcadiaZoo",
-        "mashup" : "assets/zooArcadia/mashup.png",
-        "features" : {
-            "title" : {
-                "fr" : "teste feature",
-                "en" : "feature test"
+        "url": "https://github.com/Qbeaudiquez/ArcadiaZoo",
+        "mashup": "assets/zooArcadia/mashup.png",
+        "features": [
+            {
+                "title": {
+                    "fr": "Gestion des animaux",
+                    "en": "Animal management"
+                },
+                "details": {
+                    "fr": "L'application permet aux administrateurs de créer, modifier et supprimer des fiches détaillées pour chaque animal. Chaque fiche contient des informations pratiques, des photos et des données sur la santé et l'emplacement dans le parc. Cette fonctionnalité assure un suivi précis et facilite l'accès aux informations importantes pour le personnel et pour les visiteurs.",
+                    "en": "The application allows administrators to create, modify and delete detailed sheets for each animal. Each sheet contains practical information, photos and data on health and location in the park. This feature ensures accurate tracking and facilitates access to important information for staff and visitors."
+                },
+                "img": "assets/zooArcadia/gestion-animaux.png"
             },
-            "details" : {
-                "fr" : "il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. ",
-                "en" : " this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. "
+            {
+                "title": {
+                    "fr": "Gestion du personnel",
+                    "en": "Staff management"
+                },
+                "details": {
+                    "fr": "Zoo Arcadia intègre un module complet de gestion du personnel, permettant d'ajouter et de modifier les profils des employés ainsi que leurs rôles et responsabilités. Cette fonctionnalité centralise les informations sur les équipes, les interventions effectuées et les missions assignées, offrant ainsi une meilleure organisation interne.",
+                    "en": "Zoo Arcadia integrates a complete staff management module, allowing to add and modify employee profiles as well as their roles and responsibilities. This feature centralizes information on teams, interventions performed and assigned missions, thus providing better internal organization."
+                },
+                "img": "assets/zooArcadia/gestion-personnel.png"
             },
-            "img" : "assets/zooarcadia/feature.png"
-        }
+            {
+                "title": {
+                    "fr": "Rapports d'observation",
+                    "en": "Observation reports"
+                },
+                "details": {
+                    "fr": "Les employés peuvent enregistrer et consulter des rapports détaillés sur l'activité et l'état de chaque animal. Ces rapports permettent de suivre l'évolution de la santé et du comportement des animaux et de maintenir un historique consultable par les administrateurs pour une gestion optimale.",
+                    "en": "Employees can record and consult detailed reports on the activity and condition of each animal. These reports allow tracking the evolution of animal health and behavior and maintaining a history accessible by administrators for optimal management."
+                },
+                "img": "assets/zooArcadia/rapports-observation.png"
+            },
+            {
+                "title": {
+                    "fr": "Carrousel interactif d'images",
+                    "en": "Interactive image carousel"
+                },
+                "details": {
+                    "fr": "Les fiches animaux et certaines sections du site public sont enrichies d'un carrousel d'images interactif. Les visiteurs peuvent naviguer facilement entre plusieurs images, ce qui rend l'expérience plus immersive et engageante. Des effets CSS et des transitions fluides sont utilisés pour améliorer l'interactivité.",
+                    "en": "Animal sheets and some sections of the public site are enhanced with an interactive image carousel. Visitors can easily navigate between multiple images, making the experience more immersive and engaging. CSS effects and smooth transitions are used to enhance interactivity."
+                },
+                "img": "assets/zooArcadia/carrousel.png"
+            },
+            {
+                "title": {
+                    "fr": "Interface publique responsive",
+                    "en": "Responsive public interface"
+                },
+                "details": {
+                    "fr": "L'interface destinée aux visiteurs est entièrement responsive, offrant une navigation fluide sur mobile, tablette et desktop. Les informations sur les animaux et le parc sont présentées de manière claire et accessible, avec un design ergonomique et agréable à lire.",
+                    "en": "The visitor interface is fully responsive, offering smooth navigation on mobile, tablet and desktop. Information about animals and the park is presented clearly and accessibly, with an ergonomic and pleasant to read design."
+                },
+                "img": "assets/zooArcadia/responsive.png"
+            },
+            {
+                "title": {
+                    "fr": "Sécurité et gestion des rôles",
+                    "en": "Security and role management"
+                },
+                "details": {
+                    "fr": "L'application intègre un système d'authentification sécurisé et de gestion fine des rôles pour les utilisateurs. Les administrateurs disposent d'un accès complet aux données, tandis que le personnel peut accéder uniquement aux sections nécessaires à leurs missions. Cette fonctionnalité garantit la protection des informations sensibles et la cohérence des opérations.",
+                    "en": "The application integrates a secure authentication system and fine-grained role management for users. Administrators have full access to data, while staff can only access sections necessary for their missions. This feature ensures the protection of sensitive information and operational consistency."
+                },
+                "img": "assets/zooArcadia/securite.png"
+            }
+        ]
     },
     {
-        "title" : "Cozy Nest",
-        "description" : {
-            "petite" : {
-                "fr" : "Aplication de gestion d'un zoo",
-                "en" : "it is a projet test"
+        "title": "Cozy Nest",
+        "description": {
+            "petite": {
+                "fr": "Blog interactif et gestion de contenu",
+                "en": "Interactive blog and content management"
             },
-            "grande" : {
-                "fr" : "Application web interactive pour découvrir et gérer le zoo Arcadia de façon ludique et intuitive.", 
-                "en" : "this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
+            "grande": {
+                "fr": "Cozy Nest est un projet d'études développé entre septembre 2024 et janvier 2025, sous forme d'un blog web interactif sur le thème hygge. L'application combine une interface publique élégante et un espace administrateur complet pour gérer les articles, les catégories et les commentaires. Elle est conçue pour offrir une navigation fluide et agréable, avec des contenus dynamiques et un espace administrateur permettant un contrôle total sur le contenu publié. Le projet utilise HTML, CSS, JavaScript, PHP, MySQL et MongoDB, avec une attention particulière portée à l'expérience utilisateur et à la portabilité via Docker.",
+                "en": "Cozy Nest is a student project developed between September 2024 and January 2025, in the form of an interactive web blog on the hygge theme. The application combines an elegant public interface and a complete administrator area to manage articles, categories and comments. It is designed to offer smooth and pleasant navigation, with dynamic content and an administrator area allowing total control over published content. The project uses HTML, CSS, JavaScript, PHP, MySQL and MongoDB, with particular attention paid to user experience and portability via Docker."
             }
         },
-        "date" : "01/10/2024",
-        "role" : {
-            "fr" : "Développeur web",
-            "en" : "Web Developer"
+        "date": "01/01/2025",
+        "role": {
+            "fr": "Développeur Full Stack",
+            "en": "Full Stack Developer"
         },
-        "mission" : {
-            "fr" : "Analyse du projet, Conception UI/UX, Développement HTML/CSS/JS, Intégration des données animales, Gestion de l’interactivité (carrousel, pages détaillées), Optimisation des images, Responsive Design, SEO, Déploiement.",
-            "en" : "this is a much longer mission test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
+        "mission": {
+            "fr": "La mission a consisté à concevoir et développer l'ensemble du blog, en intégrant une architecture front-end et back-end complète. J'ai développé des interfaces ergonomiques et responsives pour le site public et l'espace administrateur, mis en place un système de recherche et de filtrage par catégories pour les articles, et intégré un tableau de bord pour la gestion des publications, des commentaires et des catégories. La base de données a été modélisée avec MySQL pour les articles et MongoDB pour la flexibilité des données, et un système d'authentification avec gestion des rôles a été mis en place pour sécuriser l'accès. Enfin, le projet a été conteneurisé avec Docker afin de garantir la portabilité et la cohérence de l'environnement de développement.",
+            "en": "The mission consisted of designing and developing the entire blog, integrating a complete front-end and back-end architecture. I developed ergonomic and responsive interfaces for the public site and the administrator area, set up a search and filtering system by categories for articles, and integrated a dashboard for managing publications, comments and categories. The database was modeled with MySQL for articles and MongoDB for data flexibility, and an authentication system with role management was implemented to secure access. Finally, the project was containerized with Docker to ensure portability and consistency of the development environment."
         },
-        "url" : "https://github.com/Qbeaudiquez/ArcadiaZoo",
-        "mashup" : "assets/zooarcadia/mashup.png",
-        "features" : {
-            "title" : {
-                "fr" : "teste feature",
-                "en" : "feature test"
+        "url": "https://github.com/Qbeaudiquez/CozyNest",
+        "mashup": "assets/cozyNest/mashup.png",
+        "features": [
+            {
+                "title": {
+                    "fr": "Gestion des articles",
+                    "en": "Article management"
+                },
+                "details": {
+                    "fr": "Cozy Nest permet de créer, modifier et supprimer des articles dynamiquement, avec intégration d'images, de textes enrichis et de catégories. Les articles sont affichés sur la page publique avec une présentation soignée et interactive, permettant aux visiteurs de naviguer facilement entre les contenus.",
+                    "en": "Cozy Nest allows creating, editing and deleting articles dynamically, with integration of images, rich texts and categories. Articles are displayed on the public page with a neat and interactive presentation, allowing visitors to easily navigate between contents."
+                },
+                "img": "assets/cozyNest/gestion-articles.png"
             },
-            "details" : {
-                "fr" : "il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. ",
-                "en" : " this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. "
+            {
+                "title": {
+                    "fr": "Filtrage et recherche",
+                    "en": "Filtering and search"
+                },
+                "details": {
+                    "fr": "Les utilisateurs peuvent rechercher des articles par mots-clés ou filtrer par catégorie, ce qui facilite l'accès à l'information et améliore l'expérience de lecture. Les résultats sont affichés dynamiquement, sans rechargement complet de la page, pour une navigation fluide.",
+                    "en": "Users can search for articles by keywords or filter by category, which facilitates access to information and improves the reading experience. Results are displayed dynamically, without a complete page reload, for smooth navigation."
+                },
+                "img": "assets/cozyNest/recherche.png"
             },
-            "img" : "assets/zooarcadia/feature.png"
-        }
+            {
+                "title": {
+                    "fr": "Tableau de bord administrateur",
+                    "en": "Administrator dashboard"
+                },
+                "details": {
+                    "fr": "L'espace administrateur offre un contrôle complet sur le blog, permettant de gérer les articles, les catégories et les commentaires. Les administrateurs peuvent approuver, modifier ou supprimer les contenus, offrant un suivi et une organisation efficaces.",
+                    "en": "The administrator area offers complete control over the blog, allowing to manage articles, categories and comments. Administrators can approve, edit or delete content, providing effective tracking and organization."
+                },
+                "img": "assets/cozyNest/dashboard.png"
+            },
+            {
+                "title": {
+                    "fr": "Interface responsive et ergonomique",
+                    "en": "Responsive and ergonomic interface"
+                },
+                "details": {
+                    "fr": "Le blog est entièrement responsive, avec un design harmonieux pour les mobiles, tablettes et desktops. La typographie, les espacements et les images sont optimisés pour assurer une lecture confortable et agréable sur tous les supports.",
+                    "en": "The blog is fully responsive, with a harmonious design for mobiles, tablets and desktops. Typography, spacing and images are optimized to ensure comfortable and pleasant reading on all media."
+                },
+                "img": "assets/cozyNest/responsive.png"
+            },
+            {
+                "title": {
+                    "fr": "Système de commentaires",
+                    "en": "Comment system"
+                },
+                "details": {
+                    "fr": "Chaque article dispose d'un système de commentaires permettant aux visiteurs de partager leurs avis et questions. Les commentaires sont stockés dans la base de données et gérés via l'espace administrateur pour garantir un contenu modéré et pertinent.",
+                    "en": "Each article has a comment system allowing visitors to share their opinions and questions. Comments are stored in the database and managed via the administrator area to ensure moderated and relevant content."
+                },
+                "img": "assets/cozyNest/commentaires.png"
+            },
+            {
+                "title": {
+                    "fr": "Compteur de vues des articles",
+                    "en": "Article view counter"
+                },
+                "details": {
+                    "fr": "Chaque article affiche un compteur de vues pour mesurer son audience et l'intérêt des lecteurs. Cette fonctionnalité collecte les statistiques en temps réel et permet aux administrateurs de suivre la popularité de chaque contenu.",
+                    "en": "Each article displays a view counter to measure its audience and reader interest. This feature collects statistics in real time and allows administrators to track the popularity of each content."
+                },
+                "img": "assets/cozyNest/compteur-vues.png"
+            }
+        ]
     },
     {
-        "title" : "Cozy Nest",
-        "description" : {
-            "petite" : {
-                "fr" : "Aplication de gestion d'un zoo",
-                "en" : "it is a projet test"
+        "title": "Portfolio",
+        "description": {
+            "petite": {
+                "fr": "Portfolio personnel interactif",
+                "en": "Interactive personal portfolio"
             },
-            "grande" : {
-                "fr" : "Application web interactive pour découvrir et gérer le zoo Arcadia de façon ludique et intuitive.", 
-                "en" : "this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
+            "grande": {
+                "fr": "Portfolio web moderne et responsive présentant mes projets, compétences et parcours professionnel. Une vitrine interactive de mon travail de développeur full stack avec des animations subtiles et une navigation fluide.",
+                "en": "Modern and responsive web portfolio showcasing my projects, skills and professional journey. An interactive showcase of my full stack developer work with subtle animations and smooth navigation."
             }
         },
-        "date" : "01/10/2024",
-        "role" : {
-            "fr" : "Développeur web",
-            "en" : "Web Developer"
+        "date": "13/11/2025",
+        "role": {
+            "fr": "Développeur Full Stack",
+            "en": "Full Stack Developer"
         },
-        "mission" : {
-            "fr" : "Analyse du projet, Conception UI/UX, Développement HTML/CSS/JS, Intégration des données animales, Gestion de l’interactivité (carrousel, pages détaillées), Optimisation des images, Responsive Design, SEO, Déploiement.",
-            "en" : "this is a much longer mission test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
+        "mission": {
+            "fr": "Conception et développement complet du portfolio, Architecture SPA avec navigation dynamique, Système de thème clair/sombre, Système multilingue (FR/EN), Design responsive et animations CSS, Gestion de projets dynamiques via JSON, Optimisation des performances et SEO.",
+            "en": "Complete portfolio design and development, SPA architecture with dynamic navigation, Light/dark theme system, Multilingual system (FR/EN), Responsive design and CSS animations, Dynamic project management via JSON, Performance optimization and SEO."
         },
-        "url" : "https://github.com/Qbeaudiquez/ArcadiaZoo",
-        "mashup" : "assets/zooarcadia/mashup.png",
-        "features" : {
-            "title" : {
-                "fr" : "teste feature",
-                "en" : "feature test"
+        "url": "https://github.com/Qbeaudiquez/Portfolio",
+        "mashup": "assets/portfolio/mashup.png",
+        "features": [
+            {
+                "title": {
+                    "fr": "Navigation dynamique",
+                    "en": "Dynamic navigation"
+                },
+                "details": {
+                    "fr": "Single Page Application avec navigation fluide sans rechargement de page. Gestion de l'historique et des liens internes pour une expérience utilisateur optimale. Architecture modulaire avec chargement dynamique des contenus.",
+                    "en": "Single Page Application with smooth navigation without page reload. History management and internal links for optimal user experience. Modular architecture with dynamic content loading."
+                },
+                "img": "assets/portfolio/navigation.png"
             },
-            "details" : {
-                "fr" : "il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. ",
-                "en" : " this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. "
+            {
+                "title": {
+                    "fr": "Thème clair/sombre",
+                    "en": "Light/dark theme"
+                },
+                "details": {
+                    "fr": "Système de thème dynamique avec transition fluide entre les modes clair et sombre. Sauvegarde de la préférence utilisateur dans le localStorage pour une expérience personnalisée à chaque visite.",
+                    "en": "Dynamic theme system with smooth transition between light and dark modes. User preference saved in localStorage for a personalized experience on each visit."
+                },
+                "img": "assets/portfolio/theme.png"
             },
-            "img" : "assets/zooarcadia/feature.png"
-        }
-    },
-    {
-        "title" : "Cozy Nest",
-        "description" : {
-            "petite" : {
-                "fr" : "Aplication de gestion d'un zoo",
-                "en" : "it is a projet test"
+            {
+                "title": {
+                    "fr": "Multilingue FR/EN",
+                    "en": "Multilingual FR/EN"
+                },
+                "details": {
+                    "fr": "Système de traduction complet permettant de basculer entre français et anglais en un clic. Toutes les pages et contenus dynamiques sont traduits, avec sauvegarde de la langue préférée.",
+                    "en": "Complete translation system allowing to switch between French and English with one click. All pages and dynamic content are translated, with preferred language saving."
+                },
+                "img": "assets/portfolio/multilingue.png"
             },
-            "grande" : {
-                "fr" : "Application web interactive pour découvrir et gérer le zoo Arcadia de façon ludique et intuitive.", 
-                "en" : "this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
+            {
+                "title": {
+                    "fr": "Gestion de projets",
+                    "en": "Project management"
+                },
+                "details": {
+                    "fr": "Système de gestion de projets dynamique basé sur un fichier JSON. Affichage des projets avec aperçu au survol, navigation vers les détails, et présentation complète des fonctionnalités avec images et descriptions multilingues.",
+                    "en": "Dynamic project management system based on a JSON file. Project display with hover preview, navigation to details, and complete feature presentation with multilingual images and descriptions."
+                },
+                "img": "assets/portfolio/projets.png"
+            },
+            {
+                "title": {
+                    "fr": "Design responsive",
+                    "en": "Responsive design"
+                },
+                "details": {
+                    "fr": "Interface entièrement responsive s'adaptant à tous les écrans (mobile, tablette, desktop). Optimisation des espacements, de la typographie et des images pour chaque format. Navigation tactile optimisée pour mobile.",
+                    "en": "Fully responsive interface adapting to all screens (mobile, tablet, desktop). Optimization of spacing, typography and images for each format. Optimized touch navigation for mobile."
+                },
+                "img": "assets/portfolio/responsive.png"
+            },
+            {
+                "title": {
+                    "fr": "Animations interactives",
+                    "en": "Interactive animations"
+                },
+                "details": {
+                    "fr": "Animations CSS subtiles et performantes pour enrichir l'expérience utilisateur. Effets de transition fluides, animations de survol, et éléments interactifs comme les balles rebondissantes en arrière-plan.",
+                    "en": "Subtle and performant CSS animations to enhance user experience. Smooth transition effects, hover animations, and interactive elements like bouncing balls in the background."
+                },
+                "img": "assets/portfolio/animations.png"
             }
-        },
-        "date" : "01/10/2024",
-        "role" : {
-            "fr" : "Développeur web",
-            "en" : "Web Developer"
-        },
-        "mission" : {
-            "fr" : "Analyse du projet, Conception UI/UX, Développement HTML/CSS/JS, Intégration des données animales, Gestion de l’interactivité (carrousel, pages détaillées), Optimisation des images, Responsive Design, SEO, Déploiement.",
-            "en" : "this is a much longer mission test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
-        },
-        "url" : "https://github.com/Qbeaudiquez/ArcadiaZoo",
-        "mashup" : "assets/zooarcadia/mashup.png",
-        "features" : {
-            "title" : {
-                "fr" : "teste feature",
-                "en" : "feature test"
-            },
-            "details" : {
-                "fr" : "il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. ",
-                "en" : " this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. "
-            },
-            "img" : "assets/zooarcadia/feature.png"
-        }
-    },
-    {
-        "title" : "Cozy Nest",
-        "description" : {
-            "petite" : {
-                "fr" : "Aplication de gestion d'un zoo",
-                "en" : "it is a projet test"
-            },
-            "grande" : {
-                "fr" : "Application web interactive pour découvrir et gérer le zoo Arcadia de façon ludique et intuitive.", 
-                "en" : "this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
-            }
-        },
-        "date" : "01/10/2024",
-        "role" : {
-            "fr" : "Développeur web",
-            "en" : "Web Developer"
-        },
-        "mission" : {
-            "fr" : "Analyse du projet, Conception UI/UX, Développement HTML/CSS/JS, Intégration des données animales, Gestion de l’interactivité (carrousel, pages détaillées), Optimisation des images, Responsive Design, SEO, Déploiement.",
-            "en" : "this is a much longer mission test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues."
-        },
-        "url" : "https://github.com/Qbeaudiquez/ArcadiaZoo",
-        "mashup" : "assets/zooarcadia/feature.png",
-        "features" : {
-            "title" : {
-                "fr" : "teste feature",
-                "en" : "feature test"
-            },
-            "details" : {
-                "fr" : "il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. il s'agit d'un test de feature bien plus long pour voir si tout fonctionne correctement dans le modèle de projet. Cela devrait permettre de vérifier que les champs de description peuvent contenir des textes longs sans problème. Voici une autre phrase pour allonger encore un peu plus le texte de la feature et s'assurer que tout est bien pris en compte dans le modèle. Enfin, une dernière phrase pour conclure ce test de feature. encore une phrase pour être sûr. loren ipsum dolor sit amet. Ceci est un texte de remplissage. ",
-                "en" : " this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. this is a much longer feature test to see if everything works correctly in the project model. This should help verify that the description fields can hold long texts without any issues. Here is another sentence to further lengthen the feature text and ensure that everything is properly accounted for in the model. Finally, one last sentence to conclude this feature test. another sentence to be sure. loren ipsum dolor sit amet. This is filler text. "
-            },
-            "img" : "assets/zooarcadia/feature.png"
-        }
+        ]
     }
 ]

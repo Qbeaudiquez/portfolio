@@ -3,7 +3,7 @@ body{
     padding: 20px 45px;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     transition: background-color 0.3s ease;
 }

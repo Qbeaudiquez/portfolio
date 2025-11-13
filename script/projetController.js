@@ -254,15 +254,18 @@ function createProjetCard(projet, lang = 'fr', previewProjet) {
 
         projetContainer.addEventListener('mouseleave', () => {
             if (window.innerWidth > 850) {
-                previewProjet.classList.remove('visible')
                 // Afficher l'image par défaut après la transition
+                previewProjet.style.opacity = '0'
+                setTimeout(() => {
                         previewProjet.innerHTML = ''
                         const defaultImg = document.createElement('img')
                         defaultImg.src = './assets/defaultPreview.png'
                         defaultImg.alt = 'Aperçu par défaut'
                         defaultImg.classList.add('mashupPreview')
                         previewProjet.appendChild(defaultImg)
+                        previewProjet.style.opacity = '1'
                 // Correspond à la durée de la transition CSS
+                }, 300)
             }
         })
     }

@@ -6,11 +6,11 @@
 
 ## Français
 
-### 📋 Description
+### Description
 
 Portfolio personnel interactif développé en vanilla JavaScript. Application monopage (SPA) présentant mes projets, compétences et parcours professionnel avec un système de thème clair/sombre et une interface bilingue (français/anglais).
 
-### ✨ Fonctionnalités
+### Fonctionnalités
 
 - **Navigation fluide** : SPA avec chargement dynamique des pages
 - **Système de thème** : Mode clair et mode sombre avec transition douce
@@ -20,7 +20,7 @@ Portfolio personnel interactif développé en vanilla JavaScript. Application mo
 - **Projets dynamiques** : Chargement des projets depuis JSON avec support multilingue
 - **Prévisualisation** : Aperçu des projets au survol (desktop)
 
-### 🛠️ Technologies utilisées
+### Technologies utilisées
 
 #### Front-end
 - **HTML5** : Structure sémantique
@@ -36,7 +36,7 @@ Portfolio personnel interactif développé en vanilla JavaScript. Application mo
 - **LocalStorage** : Persistance de la page courante, langue et thème
 - **JSON** : Données des projets structurées et multilingues
 
-### 📁 Structure du projet
+### Structure du projet
 
 ```
 Portfolio/
@@ -88,7 +88,7 @@ Portfolio/
 
 ```
 
-### 🚀 Installation et utilisation
+### Installation et utilisation
 
 #### Prérequis
 - Un navigateur web moderne (Chrome, Firefox, Safari, Edge)
@@ -111,7 +111,7 @@ Portfolio/
    http://localhost:8000
    ```
 
-### 🎯 Architecture technique
+### Architecture technique
 
 #### Système de navigation
 - **SPA** : Toutes les pages sont chargées dynamiquement via `fetch()`
@@ -151,7 +151,7 @@ Portfolio/
 - **Classes** : `Projet` et `Features` pour encapsuler la logique métier
 - **Rendu** : Génération DOM dynamique dans `projetController.js`
 
-### 📝 Ajouter un nouveau projet
+### Ajouter un nouveau projet
 
 1. Modifier `models/projet.json` :
    ```json
@@ -190,7 +190,7 @@ Portfolio/
 
 2. Ajouter les images dans `assets/nouveauProjet/`
 
-### 🎨 Personnalisation
+### Personnalisation
 
 #### Couleurs
 Modifier les variables dans `style/config.css` :
@@ -210,11 +210,11 @@ Modifier les imports dans `style/config.css` et les variables :
 --main-font: 'VotrePolice', sans-serif;
 ```
 
-### 📄 Licence
+### Licence
 
 Ce projet est libre de droits pour usage personnel. Pour toute utilisation commerciale, merci de me contacter.
 
-### 📧 Contact
+### Contact
 
 - **Email** : quentin.beaudiquez@gmail.com
 - **LinkedIn** : [Quentin Beaudiquez](https://linkedin.com/in/quentin-beaudiquez)
@@ -224,11 +224,11 @@ Ce projet est libre de droits pour usage personnel. Pour toute utilisation comme
 
 ## English
 
-### 📋 Description
+### Description
 
 Interactive personal portfolio developed with vanilla JavaScript. Single Page Application (SPA) showcasing my projects, skills, and professional journey with a light/dark theme system and bilingual interface (French/English).
 
-### ✨ Features
+### Features
 
 - **Smooth navigation**: SPA with dynamic page loading
 - **Theme system**: Light and dark mode with smooth transitions
@@ -238,7 +238,7 @@ Interactive personal portfolio developed with vanilla JavaScript. Single Page Ap
 - **Dynamic projects**: Projects loaded from JSON with multilingual support
 - **Preview**: Project preview on hover (desktop)
 
-### 🛠️ Technologies used
+### Technologies used
 
 #### Front-end
 - **HTML5**: Semantic structure
@@ -254,7 +254,7 @@ Interactive personal portfolio developed with vanilla JavaScript. Single Page Ap
 - **LocalStorage**: Persistence of current page, language, and theme
 - **JSON**: Structured multilingual project data
 
-### 📁 Project structure
+### Project structure
 
 ```
 Portfolio/
@@ -306,7 +306,7 @@ Portfolio/
 
 ```
 
-### 🚀 Installation and usage
+### Installation and usage
 
 #### Prerequisites
 - A modern web browser (Chrome, Firefox, Safari, Edge)
@@ -329,7 +329,7 @@ Portfolio/
    http://localhost:8000
    ```
 
-### 🎯 Technical architecture
+### Technical architecture
 
 #### Navigation system
 - **SPA**: All pages loaded dynamically via `fetch()`
@@ -369,7 +369,7 @@ Portfolio/
 - **Classes**: `Projet` and `Features` to encapsulate business logic
 - **Rendering**: Dynamic DOM generation in `projetController.js`
 
-### 📝 Adding a new project
+### Adding a new project
 
 1. Edit `models/projet.json`:
    ```json
@@ -408,7 +408,7 @@ Portfolio/
 
 2. Add images in `assets/newProject/`
 
-### 🎨 Customization
+### Customization
 
 #### Colors
 Modify variables in `style/config.css`:
@@ -428,11 +428,11 @@ Modify imports in `style/config.css` and variables:
 --main-font: 'YourFont', sans-serif;
 ```
 
-### 📄 License
+### License
 
 This project is free to use for personal purposes. For commercial use, please contact me.
 
-### 📧 Contact
+### Contact
 
 - **Email**: quentin.beaudiquez@gmail.com
 - **LinkedIn**: [Quentin Beaudiquez](https://linkedin.com/in/quentin-beaudiquez)
@@ -440,4 +440,4 @@ This project is free to use for personal purposes. For commercial use, please co
 
 ---
 
-**Made with ❤️ by Quentin Beaudiquez**
+**Made with by Quentin Beaudiquez**

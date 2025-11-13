@@ -217,7 +217,9 @@
     padding: 20px;
 }
 
-.ctaTitle {
+
+
+.aboutCta .ctaTitle {
     font-size: 22px;
     color: var(--main-color);
 }

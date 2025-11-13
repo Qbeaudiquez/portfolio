@@ -1,21 +1,32 @@
+/**
+ * Initialize and animate bouncing balls background effect
+ * Creates responsive animated balls that bounce around the screen
+ */
 export function initBouncingBalls() {
     const cadre = document.querySelector('.cadre')
     if (!cadre) return
 
-    // Créer le conteneur pour les boules
+    // Create container for the balls
     const ballsContainer = document.createElement('div')
     ballsContainer.classList.add('ballsContainer')
     cadre.appendChild(ballsContainer)
 
-    // Fonction pour déterminer le nombre de boules selon la largeur d'écran
+    /**
+     * Determine number of balls based on screen width
+     * @returns {number} Number of balls to display
+     */
     function getBallCount() {
         const windowWidth = window.innerWidth
-        if (windowWidth >= 1280) return 20 // Grand écran
-        if (windowWidth >= 768) return 15 // Moyen écran
-        return 10 // Petit écran
+        if (windowWidth >= 1280) return 20 // Large screen
+        if (windowWidth >= 768) return 15 // Medium screen
+        return 10 // Small screen
     }
 
-    // Fonction pour générer la configuration des boules
+    /**
+     * Generate configuration for all balls
+     * @param {number} count - Number of balls to create
+     * @returns {Array} Array of color configurations
+     */
     function generateBallsConfig(count) {
         const colors = [
             { color: 'var(--first-light-color)', darkColor: 'var(--first-dark-color)' },
@@ -30,13 +41,16 @@ export function initBouncingBalls() {
         return config
     }
 
-    // Paramètres
-    const baseVelocity = 2 // Vitesse fixe pour toutes les tailles d'écran
+    // Parameters
+    const baseVelocity = 2 // Fixed velocity for all screen sizes
 
-    // Fonction pour calculer la taille des boules en fonction de la largeur de la fenêtre
+    /**
+     * Calculate ball size based on window width
+     * @returns {number} Ball size in pixels
+     */
     function calculateBallSize() {
         const windowWidth = window.innerWidth
-        // Taille augmente avec la largeur : 40px à 800px, jusqu'à 100px à 1920px
+        // Size increases with width: 40px at 800px, up to 100px at 1920px
         const size = Math.max(40, Math.min(100, (windowWidth / 1920) * 100))
         return size
     }
@@ -45,7 +59,7 @@ export function initBouncingBalls() {
     let currentVelocity = baseVelocity
     let ballsConfig = generateBallsConfig(getBallCount())
 
-    // Créer les boules avec leurs propriétés
+    // Create balls with their properties
     let balls = ballsConfig.map((config, index) => {
         const ball = document.createElement('div')
         ball.classList.add('bouncingBall')
@@ -57,7 +71,7 @@ export function initBouncingBalls() {
         
         ballsContainer.appendChild(ball)
 
-        // Position initiale aléatoire
+        // Random initial position
         const bounds = cadre.getBoundingClientRect()
         return {
             element: ball,
@@ -70,17 +84,19 @@ export function initBouncingBalls() {
         }
     })
 
-    // Fonction d'animation
+    /**
+     * Animation function - updates ball positions and handles collisions
+     */
     function animate() {
         const bounds = cadre.getBoundingClientRect()
         const isDarkMode = document.body.classList.contains('darkmodeActived')
 
         balls.forEach(ball => {
-            // Mettre à jour la position
+            // Update position
             ball.x += ball.vx
             ball.y += ball.vy
 
-            // Rebond sur les bords
+            // Bounce off edges
             if (ball.x <= 0 || ball.x >= bounds.width - currentBallSize) {
                 ball.vx *= -1
                 ball.x = Math.max(0, Math.min(ball.x, bounds.width - currentBallSize))
@@ -90,10 +106,10 @@ export function initBouncingBalls() {
                 ball.y = Math.max(0, Math.min(ball.y, bounds.height - currentBallSize))
             }
 
-            // Appliquer la position
+            // Apply position
             ball.element.style.transform = `translate(${ball.x}px, ${ball.y}px)`
 
-            // Mettre à jour la couleur selon le mode
+            // Update color based on mode
             if (isDarkMode) {
                 ball.element.style.backgroundColor = ball.darkColor
             } else {
@@ -104,12 +120,12 @@ export function initBouncingBalls() {
         requestAnimationFrame(animate)
     }
 
-    // Gérer le redimensionnement de la fenêtre
+    // Handle window resize
     window.addEventListener('resize', () => {
         const newBallSize = calculateBallSize()
         const newBallCount = getBallCount()
         
-        // Mettre à jour la taille
+        // Update size
         if (newBallSize !== currentBallSize) {
             currentBallSize = newBallSize
             
@@ -117,19 +133,19 @@ export function initBouncingBalls() {
                 ball.element.style.width = `${currentBallSize}px`
                 ball.element.style.height = `${currentBallSize}px`
                 
-                // Ajuster la position si nécessaire pour éviter les débordements
+                // Adjust position if needed to prevent overflow
                 const bounds = cadre.getBoundingClientRect()
                 ball.x = Math.min(ball.x, bounds.width - currentBallSize)
                 ball.y = Math.min(ball.y, bounds.height - currentBallSize)
             })
         }
         
-        // Recréer les boules si le nombre a changé
+        // Recreate balls if count has changed
         if (newBallCount !== balls.length) {
-            // Supprimer toutes les boules existantes
+            // Remove all existing balls
             balls.forEach(ball => ball.element.remove())
             
-            // Recréer avec le nouveau nombre
+            // Recreate with new count
             ballsConfig = generateBallsConfig(newBallCount)
             balls = ballsConfig.map((config, index) => {
                 const ball = document.createElement('div')
@@ -156,10 +172,10 @@ export function initBouncingBalls() {
         }
     })
 
-    // Démarrer l'animation
+    // Start animation
     animate()
 
-    // Observer les changements de mode
+    // Observe mode changes
     const observer = new MutationObserver(() => {
         const isDarkMode = document.body.classList.contains('darkmodeActived')
         balls.forEach(ball => {

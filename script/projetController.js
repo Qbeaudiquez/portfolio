@@ -1,9 +1,13 @@
 import { loadProjet } from './loadProjet.js'
 
-// Variable pour stocker les projets chargés
+// Variable to store loaded projects (cache)
 let projetsCache = null
 let lastProjetListContainer = null
 
+/**
+ * Get all projects (with caching)
+ * @returns {Promise<Array<Projet>>} Array of project objects
+ */
 export async function getProjets() {
     if (!projetsCache) {
         projetsCache = await loadProjet()
@@ -11,42 +15,51 @@ export async function getProjets() {
     return projetsCache
 }
 
+/**
+ * Get a specific project by ID
+ * @param {number} id - The project ID
+ * @returns {Promise<Projet|undefined>} The project object or undefined
+ */
 export async function getProjetById(id) {
     const projets = await getProjets()
     return projets.find(p => p.getId() === parseInt(id))
 }
 
+/**
+ * Render the projects list page
+ * @param {string} lang - Language code ('fr' or 'en')
+ */
 export async function renderProjets(lang = 'fr') {
     const projets = await getProjets()
     const pageContent = document.querySelector('.projetsPageContent')
     
     if (!pageContent) {
-        console.error("Container .projetsPageContent non trouvé")
+        console.error("Container .projetsPageContent not found")
         return
     }
 
-    // Créer la structure avec previewProjet et projetList
+    // Create structure with previewProjet and projetList
     const projetsWrapper = document.createElement('div')
     projetsWrapper.classList.add('projetsWrapper')
     
     const previewProjet = document.createElement('div')
     previewProjet.classList.add('previewProjet')
     
-    // Ajouter l'image par défaut au chargement
+    // Add default preview image on load
     const defaultImg = document.createElement('img')
     defaultImg.src = 'assets/defaultPreview.png'
-    defaultImg.alt = 'Aperçu par défaut'
+    defaultImg.alt = 'Default preview'
     defaultImg.classList.add('mashupPreview')
     previewProjet.appendChild(defaultImg)
     
     const projetListContainer = document.createElement('div')
     projetListContainer.classList.add('projetList')
     
-    // Assembler la structure
+    // Assemble the structure
     projetsWrapper.appendChild(previewProjet)
     projetsWrapper.appendChild(projetListContainer)
     
-    // Vider le pageContent et ajouter la nouvelle structure (après le titre)
+    // Clear pageContent and add the new structure (after the title)
     const title = pageContent.querySelector('.title')
     pageContent.innerHTML = ''
     if (title) {
@@ -54,7 +67,7 @@ export async function renderProjets(lang = 'fr') {
     }
     pageContent.appendChild(projetsWrapper)
 
-    // Créer une carte pour chaque projet
+    // Create a card for each project
     projets.forEach(projet => {
         const projetCard = createProjetCard(projet, lang, previewProjet)
         const seperateCard = document.createElement('div')
@@ -64,15 +77,15 @@ export async function renderProjets(lang = 'fr') {
         projetListContainer.appendChild(seperateCard)
     })
 
-    // Ajouter le listener seulement si c'est un nouveau conteneur
+    // Add listener only if it's a new container
     if (lastProjetListContainer !== projetListContainer) {
         projetListContainer.addEventListener('click', (e) => {
             const projetCard = e.target.closest('.projetContainer')
             if (projetCard) {
-                // Ajouter la classe hover pour l'effet visuel sur mobile
+                // Add hover class for visual effect on mobile
                 projetCard.classList.add('mobile-hover')
                 
-                // Attendre 300ms avant de naviguer
+                // Wait 300ms before navigating
                 setTimeout(() => {
                     const projetId = projetCard.querySelector('.idProjet').textContent
                     localStorage.setItem('currentProjetId', projetId)
@@ -87,46 +100,51 @@ export async function renderProjets(lang = 'fr') {
     }
 }
 
+/**
+ * Render a single project detail page
+ * @param {string} projetId - The project ID
+ * @param {string} lang - Language code ('fr' or 'en')
+ */
 export async function renderProjetDetail(projetId, lang = 'fr') {
     const projet = await getProjetById(projetId)
     
     if (!projet) {
-        console.error(`Projet avec l'ID ${projetId} non trouvé`)
+        console.error(`Project with ID ${projetId} not found`)
         return
     }
 
-    // Remplir le titre
+    // Fill the title
     const titleElement = document.querySelector('.containerTitle .title')
     if (titleElement) {
         titleElement.textContent = projet.getTitle()
     }
 
-    // Remplir la description (grande)
+    // Fill the description (long version)
     const descriptionElement = document.querySelector('.infoContainer .desciption')
     if (descriptionElement) {
         descriptionElement.textContent = projet.getDescription('grande', lang)
     }
 
-    // Remplir le rôle
+    // Fill the role
     const roleContentElement = document.querySelector('.roleContainer .roleContent')
     if (roleContentElement) {
         roleContentElement.textContent = projet.getRole(lang)
     }
 
-    // Remplir la mission
+    // Fill the mission
     const missionContentElement = document.querySelector('.missionContainer .missionContent')
     if (missionContentElement) {
         missionContentElement.textContent = projet.getMissions(lang)
     }
 
-    // Remplir l'URL
+    // Fill the URL
     const urlContentElement = document.querySelector('.urlContainer .urlContent')
     if (urlContentElement) {
         urlContentElement.href = projet.getUrl()
         urlContentElement.textContent = projet.getUrl()
     }
 
-    // Afficher le mashup
+    // Display the mashup
     const mashupElement = document.querySelector('.mashup')
     if (mashupElement && projet.getMashup()) {
         const img = document.createElement('img')
@@ -136,15 +154,20 @@ export async function renderProjetDetail(projetId, lang = 'fr') {
         mashupElement.appendChild(img)
     }
 
-    // Afficher les features
+    // Display features
     renderFeatures(projet.getFeatures(), lang)
 }
 
+/**
+ * Render the features section of a project
+ * @param {Array<Features>} features - Array of feature objects
+ * @param {string} lang - Language code ('fr' or 'en')
+ */
 function renderFeatures(features, lang = 'fr') {
     const featuresContainer = document.querySelector('.featuresContainer')
     
     if (!featuresContainer) {
-        console.error("Container .featuresContainer non trouvé")
+        console.error("Container .featuresContainer not found")
         return
     }
 
@@ -156,25 +179,31 @@ function renderFeatures(features, lang = 'fr') {
     })
 }
 
+/**
+ * Create a single feature element
+ * @param {Features} feature - The feature object
+ * @param {string} lang - Language code ('fr' or 'en')
+ * @returns {HTMLElement} The feature container element
+ */
 function createFeatureElement(feature, lang = 'fr') {
     const featureContainer = document.createElement('div')
     featureContainer.classList.add('featureContainer')
 
-    // Conteneur pour le texte (nom + description)
+    // Container for text (name + description)
     const featureContent = document.createElement('div')
     featureContent.classList.add('featureContent')
 
-    // Nom de la feature
+    // Feature name
     const featureName = document.createElement('h3')
     featureName.classList.add('featureName')
     featureName.textContent = feature.getTitle(lang)
 
-    // Description de la feature
+    // Feature description
     const featureDescription = document.createElement('p')
     featureDescription.classList.add('featureDesciption')
     featureDescription.textContent = feature.getDetails(lang)
 
-    // Image de la feature
+    // Feature image
     const featureImgContainer = document.createElement('div')
     featureImgContainer.classList.add('featureImg')
     
@@ -194,12 +223,19 @@ function createFeatureElement(feature, lang = 'fr') {
     return featureContainer
 }
 
+/**
+ * Create a project card for the projects list
+ * @param {Projet} projet - The project object
+ * @param {string} lang - Language code ('fr' or 'en')
+ * @param {HTMLElement} previewProjet - The preview container element
+ * @returns {HTMLElement} The project card container
+ */
 function createProjetCard(projet, lang = 'fr', previewProjet) {
-    // Créer le conteneur principal
+    // Create main container
     const projetContainer = document.createElement('div')
     projetContainer.classList.add('projetContainer')
 
-    // Conteneur ID
+    // ID container
     const idContainer = document.createElement('div')
     idContainer.classList.add('idContainer')
     const idProjet = document.createElement('p')
@@ -207,7 +243,7 @@ function createProjetCard(projet, lang = 'fr', previewProjet) {
     idProjet.textContent = projet.getId()
     idContainer.appendChild(idProjet)
 
-    // Conteneur de contenu
+    // Content container
     const contentContainer = document.createElement('div')
     contentContainer.classList.add('contentContainer')
     
@@ -222,7 +258,7 @@ function createProjetCard(projet, lang = 'fr', previewProjet) {
     contentContainer.appendChild(projetTitle)
     contentContainer.appendChild(projetDescription)
 
-    // Conteneur de date
+    // Date container
     const dateContainer = document.createElement('div')
     dateContainer.classList.add('dateContainer')
     const date = document.createElement('p')
@@ -230,12 +266,12 @@ function createProjetCard(projet, lang = 'fr', previewProjet) {
     date.textContent = projet.getDate()
     dateContainer.appendChild(date)
 
-    // Assembler la carte
+    // Assemble the card
     projetContainer.appendChild(idContainer)
     projetContainer.appendChild(contentContainer)
     projetContainer.appendChild(dateContainer)
 
-    // Ajouter les événements hover pour afficher le mashup (uniquement si > 850px)
+    // Add hover events to display mashup (only if > 850px)
     if (previewProjet) {
         projetContainer.addEventListener('mouseenter', () => {
             if (window.innerWidth > 850 && projet.getMashup()) {
@@ -254,17 +290,17 @@ function createProjetCard(projet, lang = 'fr', previewProjet) {
 
         projetContainer.addEventListener('mouseleave', () => {
             if (window.innerWidth > 850) {
-                // Afficher l'image par défaut après la transition
+                // Display default image after transition
                 previewProjet.style.opacity = '0'
                 setTimeout(() => {
                         previewProjet.innerHTML = ''
                         const defaultImg = document.createElement('img')
                         defaultImg.src = './assets/defaultPreview.png'
-                        defaultImg.alt = 'Aperçu par défaut'
+                        defaultImg.alt = 'Default preview'
                         defaultImg.classList.add('mashupPreview')
                         previewProjet.appendChild(defaultImg)
                         previewProjet.style.opacity = '1'
-                // Correspond à la durée de la transition CSS
+                // Matches the CSS transition duration
                 }, 300)
             }
         })

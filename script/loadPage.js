@@ -2,17 +2,22 @@ import { attachLinkListeners } from './attachLinkListeners.js'
 import { renderProjets, renderProjetDetail } from './projetController.js'
 import { translatePage } from './translations.js'
 
+/**
+ * Load and display a specific page with language support
+ * @param {string} page - The page name to load (home, about, contact, projets, projet)
+ * @param {string} lang - The language code ('fr' or 'en')
+ */
 export async function loadPage(page, lang = 'fr') {
     const pageContent = document.querySelector(".pageContent")
     const backHomeText = document.querySelector(".backHomeText")
     const backHome = document.querySelector(".backHome")
     
-    // Réinitialiser le contenu et les classes
+    // Reset content and classes
     if(pageContent) {
         pageContent.innerHTML = ""
-        // Supprimer toutes les classes spécifiques de page précédentes
+        // Remove all previous page-specific classes
         pageContent.className = 'pageContent'
-        // Ajouter la classe spécifique à la page actuelle
+        // Add the current page-specific class
         pageContent.classList.add(`${page}PageContent`)
     }
 
@@ -25,7 +30,7 @@ export async function loadPage(page, lang = 'fr') {
         const content = await response.text()
         if(pageContent) pageContent.innerHTML = content
     } catch (error) {
-        console.error("Erreur de chargement :", error)
+        console.error("Loading error:", error)
         const errorText = lang === 'fr' ? "Erreur de chargement de la page." : "Page loading error."
         const linkText = lang === 'fr' ? "Retour à l'accueil" : "Back to home"
         if(pageContent) pageContent.innerHTML = `<p>${errorText}</p><br><a data-page="home" class="internalLink link">${linkText}</a>`
@@ -38,7 +43,7 @@ export async function loadPage(page, lang = 'fr') {
                 backHome.setAttribute("data-page", "home");
             }
             if(backHomeText) backHomeText.innerHTML = lang === 'fr' ? "Accueil" : "Home";
-            // Charger et afficher les projets
+            // Load and display projects
             await renderProjets(lang)
             break;
         case "about":
@@ -55,7 +60,7 @@ export async function loadPage(page, lang = 'fr') {
                 backHome.setAttribute("data-page", "projets");
             }
             if(backHomeText) backHomeText.innerHTML = lang === 'fr' ? "Retour" : "Back";
-            // Charger et afficher le projet individuel
+            // Load and display individual project
             const projetId = localStorage.getItem('currentProjetId')
             if (projetId) {
                 await renderProjetDetail(projetId, lang)
@@ -66,7 +71,7 @@ export async function loadPage(page, lang = 'fr') {
             break;
     }
 
-    // Traduire la page
+    // Translate the page
     translatePage(page, lang)
 
     // Attach listeners to links inside the newly loaded content

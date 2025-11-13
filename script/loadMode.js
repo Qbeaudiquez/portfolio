@@ -1,3 +1,7 @@
+/**
+ * Apply the selected color mode (light/dark) to the page
+ * @param {string} mode - The mode to apply ('light' or 'dark')
+ */
 export function loadMode(mode){
     const toggleContainer = document.querySelector(".toggleContainer")
     if(!toggleContainer) return

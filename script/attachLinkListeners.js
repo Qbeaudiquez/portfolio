@@ -1,6 +1,10 @@
 import { getCurrentLang } from './language.js'
 
-// Fonction pour gérer le clic sur un lien
+/**
+ * Handle click event on internal links
+ * @param {Event} e - Click event
+ * @param {Function} onNavigate - Callback function for navigation
+ */
 function handleLinkClick(e, onNavigate) {
     e.preventDefault();
     
@@ -10,16 +14,20 @@ function handleLinkClick(e, onNavigate) {
     if(typeof onNavigate === 'function') onNavigate(page, currentLang)
 }
 
+/**
+ * Attach click listeners to all internal navigation links
+ * @param {Function} onNavigate - Callback function for navigation
+ */
 export function attachLinkListeners(onNavigate){
     const links = document.querySelectorAll(".internalLink")
 
     links.forEach(link => {
-        // Retirer tout ancien listener avant d'en ajouter un nouveau
-        // On utilise cloneNode pour supprimer tous les event listeners
+        // Remove any existing listener before adding a new one
+        // Use cloneNode to remove all event listeners
         const newLink = link.cloneNode(true)
         link.parentNode.replaceChild(newLink, link)
         
-        // Ajouter le nouveau listener
+        // Add the new listener
         newLink.addEventListener("click", (e) => handleLinkClick(e, onNavigate))
     });
 }

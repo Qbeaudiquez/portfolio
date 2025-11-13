@@ -1,6 +1,6 @@
-/* Projet Page (Détail) - Mode Light */
+/* Project Detail Page - Light Mode */
 
-.projetPageContent {
+.projetPageContent{
     justify-content: flex-start;
     overflow-y: auto;
     overflow-x: hidden;
@@ -154,7 +154,7 @@
     display: block;
 }
 
-/* Responsive Mobile - Optimisé pour la lisibilité */
+/* Responsive Mobile - Optimized for readability */
 @media (max-width: 768px) {
     .projetPageContent {
         gap: 30px;

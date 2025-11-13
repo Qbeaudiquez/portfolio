@@ -1,6 +1,10 @@
 import { Projet } from './class/classProjets.js'
 import { Features } from './class/classFeatures.js'
 
+/**
+ * Load project data from JSON file and create Projet instances
+ * @returns {Promise<Array<Projet>>} Array of project objects
+ */
 export async function loadProjet(){
     try {
         const response = await fetch("./models/projet.json")
@@ -9,11 +13,11 @@ export async function loadProjet(){
         const data = await response.json()
 
         return data.map((projet, index) => {
-            // Gérer les features : soit un objet unique (ancien format), soit un tableau
+            // Handle features: either a single object (old format) or an array
             let featuresArray = []
             
             if (Array.isArray(projet.features)) {
-                // Nouveau format : tableau de features
+                // New format: array of features
                 featuresArray = projet.features.map(feature => 
                     new Features(
                         feature.title,
@@ -22,7 +26,7 @@ export async function loadProjet(){
                     )
                 )
             } else {
-                // Ancien format : objet unique
+                // Old format: single object
                 const features = new Features(
                     projet.features.title,
                     projet.features.details,
@@ -40,11 +44,11 @@ export async function loadProjet(){
                 projet.url,
                 projet.mashup,
                 featuresArray,
-                index + 1 // ID du projet
+                index + 1 // Project ID
             )
         })
     } catch (error) {
-        console.error("Erreur lors du chargement des projets:", error)
+        console.error("Error loading projects:", error)
         return []
     }
 }

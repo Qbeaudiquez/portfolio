@@ -61,7 +61,7 @@ body.darkmodeActived .buttonContainer .backHome p::before{
 
 /* Responsive Mobile */
 @media (max-width: 768px) {
-    /* Scrollbar réduite sur mobile en mode sombre */
+    /* Reduced scrollbar on mobile in dark mode */
     body.darkmodeActived ::-webkit-scrollbar-thumb {
         border: 1px solid var(--second-color);
     }

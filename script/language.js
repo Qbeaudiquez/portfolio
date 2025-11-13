@@ -1,8 +1,12 @@
+/**
+ * Initialize the language switcher system
+ * Sets up the language toggle button and event listeners
+ */
 export function initLanguage() {
     const langButton = document.querySelector(".langue")
     if (!langButton) return
 
-    // Récupérer la langue sauvegardée ou utiliser 'fr' par défaut
+    // Get saved language or default to 'fr'
     const savedLang = localStorage.getItem("currentLang") || "fr"
     updateLanguageButton(langButton, savedLang)
     
@@ -13,24 +17,37 @@ export function initLanguage() {
         localStorage.setItem("currentLang", newLang)
         updateLanguageButton(langButton, newLang)
         
-        // Recharger le contenu de la page avec la nouvelle langue
+        // Reload page content with new language
         reloadPageContent(newLang)
     })
 }
 
+/**
+ * Update the language button display text
+ * @param {HTMLElement} button - The language button element
+ * @param {string} lang - Current language code ('fr' or 'en')
+ */
 function updateLanguageButton(button, lang) {
-    // Afficher la langue opposée (celle vers laquelle on peut switcher)
+    // Display the opposite language (the one you can switch to)
     button.textContent = lang === "fr" ? "EN" : "FR"
 }
 
+/**
+ * Reload the current page content with a new language
+ * @param {string} lang - The language code to switch to
+ */
 function reloadPageContent(lang) {
     const currentPage = localStorage.getItem('currentPage') || 'home'
     
-    // Dispatcher un événement pour recharger le contenu de la page
+    // Dispatch an event to reload page content
     const event = new CustomEvent('languageChange', { detail: { lang, page: currentPage } })
     window.dispatchEvent(event)
 }
 
+/**
+ * Get the currently selected language
+ * @returns {string} The current language code ('fr' or 'en')
+ */
 export function getCurrentLang() {
     return localStorage.getItem("currentLang") || "fr"
 }

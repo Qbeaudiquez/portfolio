@@ -23,7 +23,7 @@
         // Load the requested page (async)
         await loadPage(savedPage, savedLang)
 
-        // Écouter les événements de navigation personnalisés
+        // Listen for custom navigation events
         window.addEventListener('navigate', async (e) => {
             const page = e.detail.page
             if (page) {
@@ -31,7 +31,7 @@
             }
         })
 
-        // Écouter les changements de langue
+        // Listen for language change events
         window.addEventListener('languageChange', async (e) => {
             const { lang, page } = e.detail
             await loadPage(page, lang)

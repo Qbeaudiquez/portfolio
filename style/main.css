@@ -8,7 +8,7 @@ body{
     transition: background-color 0.3s ease;
 }
 
-/* Scrollbar personnalisée */
+/* Custom scrollbar styling */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -169,7 +169,7 @@ body{
     opacity: 100%;
 }
 
-/* Page Content - Styles généraux pour toutes les pages */
+/* Page Content - General styles for all pages */
 .pageContent{
     flex: 1;
     display: flex;
@@ -234,7 +234,7 @@ body{
     .title{
         text-align: center;
     }
-    /* Scrollbar réduite sur mobile */
+    /* Reduced scrollbar on mobile */
     ::-webkit-scrollbar {
         width: 6px;
     }

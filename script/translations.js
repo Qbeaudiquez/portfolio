@@ -139,13 +139,19 @@ export const translations = {
     }
 }
 
+/**
+ * Translate page content based on language
+ * Applies translations to all elements with data-translate attribute
+ * @param {string} page - The page name (home, about, contact, projets, projet)
+ * @param {string} lang - Language code ('fr' or 'en')
+ */
 export function translatePage(page, lang) {
     const pageTrans = translations[page]
     if (!pageTrans || !pageTrans[lang]) return
 
     const trans = pageTrans[lang]
 
-    // Traduire les éléments avec data-translate
+    // Translate elements with data-translate attribute
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate')
         if (trans[key]) {

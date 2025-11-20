@@ -41,10 +41,10 @@ body{
 }
 
 .switchContainer .langue{
-    font-family: var(--title-font);
-    font-size: 14px;
+    font-size: 18px;
     color: var(--second-color);
     transition: transform .2s ease-in-out, color 0.3s ease;
+    font-weight: 700;
 }
 
 .switchContainer .langue:hover{

@@ -3,6 +3,8 @@ import { loadProjet } from './loadProjet.js'
 // Variable to store loaded projects (cache)
 let projetsCache = null
 let lastProjetListContainer = null
+let previewTimeout = null
+let isHoveringProjet = false
 
 /**
  * Get all projects (with caching)
@@ -275,6 +277,15 @@ function createProjetCard(projet, lang = 'fr', previewProjet) {
     if (previewProjet) {
         projetContainer.addEventListener('mouseenter', () => {
             if (window.innerWidth > 850 && projet.getMashup()) {
+                // Clear any pending timeout for default preview
+                if (previewTimeout) {
+                    clearTimeout(previewTimeout)
+                    previewTimeout = null
+                }
+                
+                // Mark that we're hovering a project
+                isHoveringProjet = true
+                
                 previewProjet.style.opacity = '0'
                 setTimeout(() => {
                     previewProjet.innerHTML = ''
@@ -284,24 +295,33 @@ function createProjetCard(projet, lang = 'fr', previewProjet) {
                     img.classList.add('mashupPreview')
                     previewProjet.appendChild(img)
                     previewProjet.style.opacity = '1'
-                }, 300)
+                }, 200)
             }
         })
 
         projetContainer.addEventListener('mouseleave', () => {
             if (window.innerWidth > 850) {
-                // Display default image after transition
-                previewProjet.style.opacity = '0'
-                setTimeout(() => {
-                        previewProjet.innerHTML = ''
-                        const defaultImg = document.createElement('img')
-                        defaultImg.src = './assets/defaultPreview.png'
-                        defaultImg.alt = 'Default preview'
-                        defaultImg.classList.add('mashupPreview')
-                        previewProjet.appendChild(defaultImg)
-                        previewProjet.style.opacity = '1'
-                // Matches the CSS transition duration
-                }, 300)
+                // Mark that we're no longer hovering a project
+                isHoveringProjet = false
+                
+                // Wait 200ms before showing default preview
+                // If user hovers another project in this time, this timeout will be cleared
+                previewTimeout = setTimeout(() => {
+                    // Only show default if we're still not hovering any project
+                    if (!isHoveringProjet) {
+                        previewProjet.style.opacity = '0'
+                        setTimeout(() => {
+                            previewProjet.innerHTML = ''
+                            const defaultImg = document.createElement('img')
+                            defaultImg.src = './assets/defaultPreview.png'
+                            defaultImg.alt = 'Default preview'
+                            defaultImg.classList.add('mashupPreview')
+                            previewProjet.appendChild(defaultImg)
+                            previewProjet.style.opacity = '1'
+                        }, 200)
+                    }
+                    previewTimeout = null
+                }, 200)
             }
         })
     }

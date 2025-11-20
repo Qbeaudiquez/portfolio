@@ -46,7 +46,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100%;
@@ -155,4 +155,10 @@
 .projetsPageContent .projetList .projetContainer:hover .contentContainer .projetDescription::before,
 .projetsPageContent .projetList .projetContainer.mobile-hover .contentContainer .projetDescription::before{
     background-color: var(--third-light-color);
+}
+
+.projetsPageContent .projetList .separateCard{
+    height: 2px;
+    width: 100%;
+    border: 2px var(--second-color-transparent) dashed;
 }
